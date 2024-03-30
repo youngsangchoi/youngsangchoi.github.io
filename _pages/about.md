@@ -7,7 +7,9 @@ redirect_from:
   - /about.html
 ---
 
-I am a first-year PhD student in the [Department of Biomedical Informatics](https://www.dbmi.columbia.edu/) at Columbia University advised by [Dr. Shalmali Joshi](https://shalmalijoshi.github.io/reAIM/) and [Dr. Pierre Elias](https://members.dbmi.columbia.edu/CRADLE/). My research is on machine learning for clinical informatics, with a current focus on multimodal learning. In particular, I am interested in exploring the following:
+I am a first-year PhD student in the [Department of Biomedical Informatics](https://www.dbmi.columbia.edu/) at Columbia University advised by [Dr. Shalmali Joshi](https://shalmalijoshi.github.io/reAIM/) and [Dr. Pierre Elias](https://members.dbmi.columbia.edu/CRADLE/). My research is on machine learning for clinical informatics, with a current focus on multimodal learning.
+
+In particular, I am interested in exploring the following:
 
 - When does the inclusion of more input modalities improve the performance and robustness of predictive models?
 - Does domain knowledge on the relationship between modalities and learning tasks help us better model multimodal interactions?
