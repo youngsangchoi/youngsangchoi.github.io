@@ -15,4 +15,6 @@ In particular, I am interested in exploring the following:
 - Does domain knowledge on the relationship between modalities and learning tasks help us better model multimodal interactions?
 - Can shared and synergistic information from multiple accessible modalities replace more inaccessible modalities in clinical decision support?
 
-You can reach me via email at `young{dot}sang{dot}choi@columbia.edu`.
+Previously, I was at the National Cancer Center-Korea as a researcher and received my MS in Information Systems at [Cornell Tech](https://tech.cornell.edu/programs/masters-programs/jacobs-technion-cornell-dual-ms-health-tech/).
+
+My first name is Young Sang but I go by Young. You can reach me via email at `young{dot}sang{dot}choi@columbia.edu`.
