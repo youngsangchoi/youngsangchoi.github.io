@@ -7,7 +7,7 @@ redirect_from:
   - /about.html
 ---
 
-I am a first-year PhD student in the [Department of Biomedical Informatics](https://www.dbmi.columbia.edu/) at Columbia University advised by [Dr. Shalmali Joshi](https://shalmalijoshi.github.io/reAIM/) and [Dr. Pierre Elias](https://members.dbmi.columbia.edu/CRADLE/). My research is on machine learning for clinical informatics, with a focus on multimodal learning.
+I am a first-year PhD student in the [Department of Biomedical Informatics](https://www.dbmi.columbia.edu/) at Columbia University advised by [Dr. Shalmali Joshi](https://shalmalijoshi.github.io/reAIM/) and [Dr. Pierre Elias](https://members.dbmi.columbia.edu/CRADLE/). My research is on machine learning for clinical informatics with a focus on multimodal learning.
 
 In particular, I am currently interested in exploring the following:
 
@@ -15,7 +15,7 @@ In particular, I am currently interested in exploring the following:
 - Does domain knowledge on the relationship between modalities and learning tasks help us better model multimodal interactions?
 - Can shared and synergistic information from multiple accessible modalities replace more inaccessible modalities in clinical decision support?
 
-Previously, I was a researcher at the National Cancer Center-Korea and received my MS in Information Systems at [Cornell Tech](https://tech.cornell.edu/programs/masters-programs/jacobs-technion-cornell-dual-ms-health-tech/).
+Previously, I was a researcher at the National Cancer Center-Korea and received my MS in Information Systems at [Cornell Tech](https://tech.cornell.edu/programs/masters-programs/jacobs-technion-cornell-dual-ms-health-tech/) and BA in Mathematics at NYU.
 
 My first name is Young Sang but I go by Young (like the opposite of "old"). My pronouns are he/him/his.
 
