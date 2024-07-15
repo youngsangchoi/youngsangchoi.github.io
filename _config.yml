@@ -23,9 +23,9 @@ author:
   # Biographic information
   avatar           : "profile.png"
   name             : "Young Sang Choi"
-  pronouns         : "he / him /his"
-  bio              : "Graduate Student"
-  location         : "New York, NY"
+  pronouns         : "he/him/his"
+  bio              : ""
+  location         : "New York, NY, United States"
   employer         : "Columbia University"
   # uri              : # URL
   # email            : "none@example.org" 
