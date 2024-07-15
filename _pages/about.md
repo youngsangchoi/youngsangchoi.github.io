@@ -7,7 +7,7 @@ redirect_from:
   - /about.html
 ---
 
-I am a second-year doctoral student in the [Department of Biomedical Informatics](https://www.dbmi.columbia.edu/) at Columbia University advised by [Dr. Shalmali Joshi](https://shalmalijoshi.github.io/reAIM/) and [Dr. Pierre Elias](https://members.dbmi.columbia.edu/CRADLE/).
+I am a second-year doctoral student advised by [Dr. Shalmali Joshi](https://shalmalijoshi.github.io/reAIM/) and [Dr. Pierre Elias](https://members.dbmi.columbia.edu/CRADLE/) at the [Department of Biomedical Informatics](https://www.dbmi.columbia.edu/) at Columbia University.
 
 Previously, I was a researcher at the National Cancer Center-Korea and received my Master of Science in Information Systems at [Cornell Tech](https://tech.cornell.edu/programs/masters-programs/jacobs-technion-cornell-dual-ms-health-tech/) and Bachelor of Arts in Mathematics at New York University.
 
