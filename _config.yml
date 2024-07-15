@@ -9,7 +9,7 @@
 # Basic Site Settings
 locale                   : "en-US"
 title                    : "Young Sang Choi"
-title_separator          : "-"
+title_separator          : ""
 name                     : &name "Young Sang Choi"
 description              : &description "Graduate student at Columbia University"
 url                      : https://youngsangchoi.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
