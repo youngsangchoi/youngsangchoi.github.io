@@ -8,7 +8,7 @@
 
 # Basic Site Settings
 locale                   : "en-US"
-title                    : ""
+title                    : "Young Sang Choi"
 title_separator          : "-"
 name                     : &name "Young Sang Choi"
 description              : &description "Graduate student at Columbia University"
