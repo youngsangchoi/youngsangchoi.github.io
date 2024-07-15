@@ -13,7 +13,7 @@ Previously, I was a researcher at the National Cancer Center-Korea and received 
 
 My first name is Young Sang but I go by Young (like the opposite of "old"). My pronouns are he/him/his. You can reach me via email at `young{dot}sang{dot}choi{at}columbia.edu`.
 
-**Research**
+**Research**\
 My research is on machine learning for clinical informatics with a focus on multimodal learning.
 
 In particular, I am currently exploring the following:
