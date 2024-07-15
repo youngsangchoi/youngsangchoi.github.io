@@ -5,7 +5,7 @@ permalink: /publications/
 author_profile: true
 ---
 
-Please refer to my [Google Scholar](https://scholar.google.com/citations?user=cX-zhzAAAAAJ) page for additional details.
+Please refer to my [Google Scholar](https://scholar.google.com/citations?user=cX-zhzAAAAAJ) page for an up-to-date list of my publications.
 
 \* denotes equal contribution.
 
