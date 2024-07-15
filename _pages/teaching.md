@@ -6,9 +6,9 @@ author_profile: true
 ---
 
 **Columbia University**\
-[Advanced Machine Learning for Health and Medicine (BINF 4008 / COMS 4995)](https://reaim-lab.github.io/binf4008/)\
-Teaching Assistant, Fall 2023
+- [BINF 4008 / COMS 4995: Advanced Machine Learning for Health and Medicine (Fall 2023)](https://reaim-lab.github.io/binf4008/)\
+Teaching Assistant
 
 **Cornell Tech**\
-The Product Studio at Cornell Tech (TECH 5900), Civic and Social Impact Tech Clinic
-Teaching Assistant, Fall 2018
+- TECH 5900: The Product Studio at Cornell Tech, Civic and Social Impact Tech Clinic (Fall 2018)\
+Teaching Assistant
