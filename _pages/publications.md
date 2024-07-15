@@ -7,7 +7,7 @@ author_profile: true
 
 Please refer to my [Google Scholar](https://scholar.google.com/citations?user=cX-zhzAAAAAJ) page for additional details.
 
-* denotes equal contribution.
+\* denotes equal contribution.
 
 **Does Multimodality Help in Deep Learning-Based Structural Heart Disease Detection?**\
 Young Sang Choi, Shalmali Joshi, Linyuan Jing, Pierre Elias\
