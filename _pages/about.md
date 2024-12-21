@@ -7,11 +7,11 @@ redirect_from:
   - /about.html
 ---
 
-I am a second-year doctoral student advised by [Dr. Shalmali Joshi](https://shalmalijoshi.github.io/reAIM/) and [Dr. Pierre Elias](https://members.dbmi.columbia.edu/CRADLE/) at the [Department of Biomedical Informatics](https://www.dbmi.columbia.edu/) at Columbia University.
+I am a doctoral student advised by [Dr. Shalmali Joshi](https://reaim-lab.github.io/shalmalijoshi.html) and [Dr. Pierre Elias](https://members.dbmi.columbia.edu/CRADLE/) at the [Department of Biomedical Informatics](https://www.dbmi.columbia.edu/) at Columbia University.
 
 Previously, I was a researcher at the National Cancer Center-Korea and received my Master of Science in Information Systems at [Cornell Tech](https://tech.cornell.edu/programs/masters-programs/jacobs-technion-cornell-dual-ms-health-tech/) and Bachelor of Arts in Mathematics at New York University.
 
-My first name is Young Sang but I go by Young (like the opposite of "old"). You can reach me via email at `young{dot}sang{dot}choi{at}columbia.edu`.
+My first name is Young Sang but I go by Young (like the opposite of "old"). You can reach me via email at `young[dot]sang[dot]choi[at]columbia.edu`.
 
 ## Research
 My research is on machine learning for clinical informatics with a focus on multimodal learning.
