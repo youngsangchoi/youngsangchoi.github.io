@@ -16,11 +16,15 @@ You can reach me via email at `young[dot]sang[dot]choi[at]columbia[dot]edu`.
 ## Research
 My research sits on the intersection of multimodal learning, event stream modeling, and trustworthy machine learning. I am particularly interested in how these fields converge to create reliable AI-based systems to advance human health. Selected works are listed below:
 
-**ICYM<sup>2</sup>I: The Illusion of Multimodal Informativeness under Missingness** Young Sang Choi\*, Vincent Jeanselme\*, Pierre Elias, and Shalmali Joshi  
-*International Conference on Learning Representations (ICLR), 2026* \[[arXiv](https://arxiv.org/abs/2505.16953)\] \[[OpenReview](https://openreview.net/forum?id=jC7FK8Rf4s&nesting=2&sort=date-desc)\]
+**ICYM<sup>2</sup>I: The Illusion of Multimodal Informativeness under Missingness**<br>
+Young Sang Choi\*, Vincent Jeanselme\*, Pierre Elias, and Shalmali Joshi  <br>
+*International Conference on Learning Representations (ICLR), 2026*<br>
+\[[arXiv](https://arxiv.org/abs/2505.16953)\] \[[OpenReview](https://openreview.net/forum?id=jC7FK8Rf4s&nesting=2&sort=date-desc)\]
 
-**FoMoH: A Clinically Meaningful Foundation Model Evaluation for Structured Electronic Health Records** Chao Pang\*, Vincent Jeanselme\*, Young Sang Choi, Xinzhuo Jiang, Zilin Jing, Aparajita Kashyap, Yuta Kobayashi, Yanwei Li, Florent Pollet, Karthik Natarajan, and Shalmali Joshi  
-*arXiv preprint, 2025* \[[arXiv](https://arxiv.org/abs/2505.16941)\]
+**FoMoH: A Clinically Meaningful Foundation Model Evaluation for Structured Electronic Health Records**<br>
+Chao Pang\*, Vincent Jeanselme\*, Young Sang Choi, Xinzhuo Jiang, Zilin Jing, Aparajita Kashyap, Yuta Kobayashi, Yanwei Li, Florent Pollet, Karthik Natarajan, and Shalmali Joshi<br>
+*arXiv preprint, 2025*<br>
+\[[arXiv](https://arxiv.org/abs/2505.16941)\]
 
 ## Academic Service
 
