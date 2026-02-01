@@ -19,12 +19,12 @@ My research sits on the intersection of multimodal learning, event stream modeli
 **ICYM<sup>2</sup>I: The Illusion of Multimodal Informativeness under Missingness**<br>
 Young Sang Choi\*, Vincent Jeanselme\*, Pierre Elias, and Shalmali Joshi  <br>
 *International Conference on Learning Representations (ICLR), 2026*<br>
-\[[arXiv](https://arxiv.org/abs/2505.16953)\] \[[OpenReview](https://openreview.net/forum?id=jC7FK8Rf4s&nesting=2&sort=date-desc)\]
+\[[arXiv](https://arxiv.org/abs/2505.16953)\] \[[Github](https://github.com/reAIM-Lab/ICYM2I)\] \[[OpenReview](https://openreview.net/forum?id=jC7FK8Rf4s&nesting=2&sort=date-desc)\]
 
 **FoMoH: A Clinically Meaningful Foundation Model Evaluation for Structured Electronic Health Records**<br>
 Chao Pang\*, Vincent Jeanselme\*, Young Sang Choi, Xinzhuo Jiang, Zilin Jing, Aparajita Kashyap, Yuta Kobayashi, Yanwei Li, Florent Pollet, Karthik Natarajan, and Shalmali Joshi<br>
 *arXiv preprint, 2025*<br>
-\[[arXiv](https://arxiv.org/abs/2505.16941)\]
+\[[arXiv](https://arxiv.org/abs/2505.16941)\] \[[Github](https://github.com/reAIM-Lab/ehr_foundation_model_benchmark)\]
 
 ## Academic Service
 
