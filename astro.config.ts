@@ -30,7 +30,7 @@ export default defineConfig({
 		icon(),
 		sitemap(),
 		mdx(),
-		robotsTxt(),
+		// robotsTxt(),
 		webmanifest({
 			// See: https://github.com/alextim/astro-lib/blob/main/packages/astro-webmanifest/README.md
 			name: siteConfig.title,
