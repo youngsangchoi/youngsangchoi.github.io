@@ -3,6 +3,7 @@ import ThemeToggle from "@/components/ThemeToggle.astro";
 import { siteConfig } from "@/site.config";
 
 const socialLinks = [
+	{ title: "CV", href: "/young_sang_choi_cv.pdf" },
 	{ title: "Google Scholar", href: "https://scholar.google.com/citations?hl=en&user=cX-zhzAAAAAJ" },
 	{ title: "LinkedIn", href: "https://www.linkedin.com/in/youngsangchoi" },
 	{ title: "GitHub", href: "https://github.com/youngsangchoi" },
@@ -18,11 +19,11 @@ const socialLinks = [
 	</a>
 
 	<div class="hidden items-center gap-4 sm:flex">
-		<nav class="divide-accent flex divide-x">
+		<nav class="flex items-center gap-x-5">
 			{
 				socialLinks.map((link) => (
 					<a
-						class="text-accent px-4 text-base font-semibold hover:underline hover:underline-offset-4"
+						class="text-accent text-base font-semibold hover:underline hover:underline-offset-4"
 						href={link.href}
 						target="_blank"
 						rel="noopener noreferrer"
@@ -35,38 +36,19 @@ const socialLinks = [
 		<ThemeToggle />
 	</div>
 
-	<div class="flex items-center gap-2 sm:hidden">
+	<div class="flex items-center gap-4 sm:hidden">
 		<ThemeToggle />
 
 		<button
 			id="mobile-menu-btn"
-			class="group border-accent/20 bg-accent/5 relative h-9 w-9 border"
+			class="group border-accent/20 bg-accent/5 relative flex h-9 w-auto items-center justify-center border px-4"
 			aria-label="Toggle Menu"
 		>
-			<svg
-				class="absolute top-1/2 left-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 transition-opacity group-[.menu-open]:opacity-0"
-				fill="none"
-				viewBox="0 0 24 24"
-				stroke="currentColor"
+			<span
+				class="text-accent text-sm font-bold tracking-widest uppercase group-[.menu-open]:opacity-50"
 			>
-				<path
-					stroke-linecap="round"
-					stroke-linejoin="round"
-					stroke-width="2"
-					d="M4 6h16M4 12h16M4 18h16"></path>
-			</svg>
-			<svg
-				class="absolute top-1/2 left-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 opacity-0 transition-opacity group-[.menu-open]:opacity-100"
-				fill="none"
-				viewBox="0 0 24 24"
-				stroke="currentColor"
-			>
-				<path
-					stroke-linecap="round"
-					stroke-linejoin="round"
-					stroke-width="2"
-					d="M6 18L18 6M6 6l12 12"></path>
-			</svg>
+				Links
+			</span>
 		</button>
 	</div>
 
