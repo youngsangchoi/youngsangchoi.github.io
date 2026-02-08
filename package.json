@@ -2,6 +2,7 @@
 	"name": "shaggy-satellite",
 	"type": "module",
 	"version": "6.11.0",
+	"packageManager": "pnpm@9.15.4",
 	"scripts": {
 		"postinstall": "npm rebuild sharp --force",
 		"dev": "astro dev",
