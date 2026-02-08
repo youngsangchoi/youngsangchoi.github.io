@@ -1,10 +1,13 @@
 {/* Inlined to avoid FOUC. This is a parser blocking script. */}
 <script is:inline>
-	const lightModePref = window.matchMedia("(prefers-color-scheme: light)");
+	// 1. CHANGE: Check for "Dark" preference specifically.
+	// This ensures that if the system is "Light" OR "No Preference", we default to Light.
+	const darkModePref = window.matchMedia("(prefers-color-scheme: dark)");
 
 	function getUserPref() {
 		const storedTheme = typeof localStorage !== "undefined" && localStorage.getItem("theme");
-		return storedTheme || (lightModePref.matches ? "light" : "dark");
+		// If no stored theme, return "dark" ONLY if the system explicitly asks for it. Otherwise "light".
+		return storedTheme || (darkModePref.matches ? "dark" : "light");
 	}
 
 	function setTheme(newTheme) {
@@ -16,11 +19,15 @@
 
 		const root = document.documentElement;
 
-		// root already set to newTheme, exit early
-		if (newTheme === root.getAttribute("data-theme")) {
-			return;
+		// 2. CHANGE: Toggle the class 'dark'.
+		// This is REQUIRED for Tailwind's "dark:" utilities to work.
+		if (newTheme === "dark") {
+			root.classList.add("dark");
+		} else {
+			root.classList.remove("dark");
 		}
 
+		// Keep the data-attribute for your CSS variables
 		root.setAttribute("data-theme", newTheme);
 
 		if (typeof localStorage !== "undefined") {
@@ -40,5 +47,5 @@
 	});
 
 	// listen for prefers-color-scheme change.
-	lightModePref.addEventListener("change", (e) => setTheme(e.matches ? "light" : "dark"));
+	darkModePref.addEventListener("change", (e) => setTheme(e.matches ? "dark" : "light"));
 </script>

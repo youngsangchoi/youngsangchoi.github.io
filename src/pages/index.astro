@@ -1,80 +1,161 @@
 ---
-import { type CollectionEntry, getCollection } from "astro:content";
-import PostPreview from "@/components/blog/PostPreview.astro";
-import Note from "@/components/note/Note.astro";
-import SocialList from "@/components/SocialList.astro";
-import { getAllPosts } from "@/data/post";
 import PageLayout from "@/layouts/Base.astro";
-import { collectionDateSort } from "@/utils/date";
 
-// Posts
-const MAX_POSTS = 10;
-const allPosts = await getAllPosts();
-const allPostsByDate = allPosts.sort(collectionDateSort) as CollectionEntry<"post">[];
-const latestPosts = allPostsByDate.slice(0, MAX_POSTS);
+interface Publication {
+	title: string;
+	authors: string;
+	venue: string;
+	links: { text: string; href: string }[];
+	tldr?: string;
+}
 
-// Pinned Posts, set to a max of 3;
-const MAX_PINNED_POSTS = 3;
-const pinnedPosts = allPostsByDate.filter((p) => p.data.pinned).slice(0, MAX_PINNED_POSTS);
-
-// Notes
-const MAX_NOTES = 5;
-const allNotes = await getCollection("note");
-const latestNotes = allNotes
-	.sort(collectionDateSort)
-	.slice(0, MAX_NOTES) as CollectionEntry<"note">[];
+const publications: Publication[] = [
+	{
+		title: "ICYM<sup>2</sup>I: The Illusion of Multimodal Informativeness under Missingness",
+		authors: "<b>Young Sang Choi</b>*, Vincent Jeanselme*, Pierre Elias, and Shalmali Joshi",
+		venue: "International Conference on Learning Representations (ICLR) 2026",
+		tldr: " Missing modalities induce distribution shifts that standard models ignore. We introduce <b>ICYM<sup>2</sup>I</b>, a principled framework using double inverse-propensity weighting to correct this bias and accurately quantify true multimodal informativeness.",
+		links: [
+			{ text: "arXiv", href: "https://arxiv.org/abs/2505.16953" },
+			{ text: "GitHub", href: "https://github.com/reAIM-Lab/ICYM2I" },
+			{
+				text: "OpenReview",
+				href: "https://openreview.net/forum?id=jC7FK8Rf4s",
+			},
+		],
+	},
+	{
+		title: "FoMoH: A Clinically Meaningful Foundation Model Evaluation",
+		authors:
+			"Chao Pang*, Vincent Jeanselme*, <b>Young Sang Choi</b>, Xinzhuo Jiang, Zilin Jing, Aparajita Kashyap, Yuta Kobayashi, Yanwei Li, Florent Pollet, Karthik Natarajan, and Shalmali Joshi",
+		venue: "arXiv preprint 2025",
+		tldr: "We propose <b>FoMoH</b>, a clinically grounded evaluation framework for structured electronic health record (EHR)-based foundation models. We evaluate 5 million patients across 14 downstream tasks to determine how specific pre-training and representation strategies impact clinical utility, fairness, and reproducibility.",
+		links: [
+			{ text: "arXiv", href: "https://arxiv.org/abs/2505.16941" },
+			{ text: "GitHub", href: "https://github.com/reAIM-Lab/ehr_foundation_model_benchmark" },
+		],
+	},
+];
 ---
 
 <PageLayout meta={{ title: "Home" }}>
 	<section>
-		<h1 class="title mb-12">Hello World!</h1>
+		<h1 class="title text-accent mb-6">About</h1>
 		<p class="mb-4">
-			Hi, I’m a theme for Astro, a simple starter that you can use to create your website or blog.
-			If you want to know more about how you can customise me, add more posts, and make it your own,
-			click on the GitHub icon link below and it will take you to my repo.
+			I am a doctoral student advised by <a
+				href="https://reaim-lab.github.io/shalmalijoshi.html"
+				class="cactus-link"
+				target="_blank"
+				rel="noopener noreferrer">Dr. Shalmali Joshi</a
+			> and <a
+				href="https://pierreelias.github.io/Elias_Bio.html"
+				class="cactus-link"
+				target="_blank"
+				rel="noopener noreferrer">Dr. Pierre Elias</a
+			> at the <a
+				href="https://www.dbmi.columbia.edu/phd-students/"
+				class="cactus-link"
+				target="_blank"
+				rel="noopener noreferrer">Department of Biomedical Informatics (DBMI)</a
+			> at Columbia University. Previously, I was a researcher at the National Cancer Center-Korea and
+			received my Master of Science in Information Systems under the advisement of Dr. Deborah Estrin
+			at Cornell Tech and Bachelor of Arts in Mathematics at New York University.
 		</p>
-		<SocialList />
+		<p class="mb-4">
+			My first name is "Young Sang" but I prefer to be called "Young" (like the opposite of "old").
+		</p>
+		<p>
+			<p>
+				You can reach me via email at
+				<code
+					class="border border-gray-300/50 bg-gray-200/50 px-2 py-1 font-mono text-sm break-all whitespace-normal dark:border-gray-600/50 dark:bg-gray-700/50"
+					>young[dot]sang[dot]choi[at]columbia[dot]edu</code
+				>.
+			</p>
+		</p>
 	</section>
-	{
-		pinnedPosts.length > 0 && (
-			<section class="mt-16">
-				<h2 class="title mb-6 text-xl">Pinned Posts</h2>
-				<ul class="space-y-4" role="list">
-					{pinnedPosts.map((p) => (
-						<li class="grid gap-1 sm:grid-cols-[auto_1fr]">
-							<PostPreview post={p} />
-						</li>
-					))}
-				</ul>
-			</section>
-		)
-	}
+
 	<section class="mt-16">
-		<h2 class="title text-accent mb-6 text-xl"><a href="/posts/">Posts</a></h2>
-		<ul class="space-y-4" role="list">
+		<h2 class="title text-accent mb-4 text-xl">Research</h2>
+		<p class="mb-6">
+			My research sits on the intersection of multimodal learning, event stream modeling, and
+			trustworthy machine learning. I am particularly interested in how these fields converge to
+			create reliable AI-based systems to advance human health.
+		</p>
+		<p class="mb-6">Selected works listed below:</p>
+
+		<ul class="space-y-4">
 			{
-				latestPosts.map((p) => (
-					<li class="grid gap-1 sm:grid-cols-[auto_1fr]">
-						<PostPreview post={p} />
+				publications.map((paper) => (
+					<li class="bg-accent/5 block px-5 py-4">
+						<h3 class="text-accent text-lg font-bold" set:html={paper.title} />
+
+						<p class="mt-2 text-sm text-gray-700 dark:text-gray-300" set:html={paper.authors} />
+
+						<p class="mt-1 text-sm text-gray-600 italic dark:text-gray-400">{paper.venue}</p>
+
+						<div class="mt-3 flex gap-2 text-sm">
+							{paper.links.map((link) => (
+								<a
+									href={link.href}
+									class="cactus-link text-sm"
+									target="_blank"
+									rel="noopener noreferrer"
+								>
+									[{link.text}]
+								</a>
+							))}
+						</div>
+
+						{paper.tldr && (
+							<div class="border-accent/10 mt-3 border bg-white/50 p-2 text-sm text-gray-600 dark:bg-black/20 dark:text-gray-400">
+								<span class="text-accent font-bold">TL;DR:</span>
+								<span set:html={paper.tldr} />
+							</div>
+						)}
 					</li>
 				))
 			}
 		</ul>
 	</section>
-	{
-		latestNotes.length > 0 && (
-			<section class="mt-16">
-				<h2 class="title text-accent mb-6 text-xl">
-					<a href="/notes/">Notes</a>
-				</h2>
-				<ul class="space-y-6" role="list">
-					{latestNotes.map((note) => (
-						<li>
-							<Note note={note} as="h3" isPreview />
-						</li>
-					))}
+
+	<section class="mt-16 mb-16">
+		<h2 class="title text-accent mb-6 text-xl">Academic Service</h2>
+
+		<div class="space-y-4">
+			<div>
+				<h3 class="text-accent mb-1 font-semibold">Journal Reviewer</h3>
+				<ul class="text-sm text-gray-700 dark:text-gray-300">
+					<li class="flex items-start justify-between">
+						<span>Transactions on Machine Learning Research (TMLR)</span>
+					</li>
 				</ul>
-			</section>
-		)
-	}
+			</div>
+
+			<div>
+				<h3 class="text-accent mb-1 font-semibold">Conference Reviewer</h3>
+				<ul class="space-y-1 text-sm text-gray-700 dark:text-gray-300">
+					<li class="flex items-start justify-between">
+						<span>Machine Learning for Healthcare (MLHC)</span>
+						<span class="ml-2 whitespace-nowrap text-gray-500">2024, 2025</span>
+					</li>
+					<li class="flex items-start justify-between">
+						<span
+							>International Conference on Medical Image Computing and Computer-Assisted
+							Intervention (MICCAI)</span
+						>
+						<span class="ml-2 whitespace-nowrap text-gray-500">2025</span>
+					</li>
+					<li class="flex items-start justify-between">
+						<span>Machine Learning for Health Symposium (ML4H)</span>
+						<span class="ml-2 whitespace-nowrap text-gray-500">2025</span>
+					</li>
+					<li class="flex items-start justify-between">
+						<span>AMIA Annual Symposium</span>
+						<span class="ml-2 whitespace-nowrap text-gray-500">2025</span>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</section>
 </PageLayout>
