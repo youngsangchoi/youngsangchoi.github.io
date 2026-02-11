@@ -1,12 +1,8 @@
-/* would like to ignore ./src/pages/og-image/[slug].png.ts */
 @import "tailwindcss";
-/* config for tailwindcss-typography plugin */
 @config "../../tailwind.config.ts";
 
-/* use a selector-based strategy for dark mode */
 @custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
 
-/* you could refactor below to use light-dark(), depending on your target audience */
 @theme {
     --color-global-bg: oklch(95% 0.01 100); 
     --color-global-text: oklch(10% 0.01 264); 
@@ -21,14 +17,11 @@
         color-scheme: light dark;
         accent-color: var(--color-accent);
         scrollbar-gutter: stable;
-
-        /* Default: 1rem (16px) for Mobile */
         font-size: 1rem; 
 
         @media (min-width: 640px) {
             font-size: 1.125rem; 
         }
-        /* --------------------- */
 
         &[data-theme="light"] {
             color-scheme: light;
@@ -36,12 +29,12 @@
 
         &[data-theme="dark"] {
             color-scheme: dark;
-            --color-global-bg: oklch(25% 0.03 264); 
-            --color-global-text: oklch(83% 0.02 264); 
-            --color-link: oklch(70.44% 0.1133 349);
-            --color-accent: oklch(73.4% 0.116 245.5);
-            --color-accent-2: oklch(94.66% 0 0);
-            --color-quote: oklch(94.8% 0.106 136.49);
+            --color-global-bg: oklch(10% 0 0); 
+            --color-global-text: oklch(80% 0 0); 
+            --color-link: oklch(98% 0 0);
+            --color-accent: oklch(98% 0 0);
+            --color-accent-2: oklch(98% 0 0);
+            --color-quote: oklch(70% 0 0);
         }
     }
 
@@ -53,7 +46,6 @@
         navigation: auto;
     }
 
-    /* Astro image responsive styles, modified from -> https://docs.astro.build/en/guides/images/#responsive-image-styles */
     :where([data-astro-image]) {
         object-fit: var(--fit);
         object-position: var(--pos);
@@ -86,7 +78,7 @@
     --tw-prose-code: var(--color-global-text);
     --tw-prose-headings: var(--color-accent-2);
     --tw-prose-hr: 0.5px dashed #666;
-    --tw-prose-links: var(--color-global-text);
+    --tw-prose-links: var(--color-link);
     --tw-prose-quotes: var(--color-quote);
     --tw-prose-th-borders: #666;
 }
