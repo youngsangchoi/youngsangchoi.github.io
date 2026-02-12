@@ -4,6 +4,7 @@
 @custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
 
 @theme {
+    /* LIGHT MODE: Ivy League (Blue & Cream) */
     --color-global-bg: oklch(95% 0.01 100); 
     --color-global-text: oklch(10% 0.01 264); 
     --color-link: oklch(55.44% 0.0431 185.69);
@@ -17,16 +18,17 @@
         color-scheme: light dark;
         accent-color: var(--color-accent);
         scrollbar-gutter: stable;
-        font-size: 1rem; 
+        font-size: 1.125rem; 
 
         @media (min-width: 640px) {
-            font-size: 1.125rem; 
+            font-size: 1.25rem; 
         }
 
         &[data-theme="light"] {
             color-scheme: light;
         }
 
+        /* DARK MODE: Linear High-Contrast (Obsidian & White) */
         &[data-theme="dark"] {
             color-scheme: dark;
             --color-global-bg: oklch(10% 0 0); 
@@ -67,7 +69,18 @@
     }
 
     .title {
-        @apply text-accent-2 text-2xl font-semibold;
+        @apply text-accent-2 text-2xl font-semibold font-mono;
+    }
+
+    /* FIXED: Bulletproof rule to stop code wrapping */
+    .prose :where(code) {
+        white-space: pre !important;        /* Forces text to stay on one line */
+        word-break: keep-all !important;    /* Prevents breaking inside words */
+        overflow-wrap: normal !important;   /* Prevents breaking long strings */
+        display: inline-block !important;   /* Allows scrolling */
+        overflow-x: auto;                   /* Adds scrollbar if too long */
+        max-width: 100%;
+        vertical-align: bottom;
     }
 }
 

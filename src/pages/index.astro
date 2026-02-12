@@ -63,100 +63,102 @@ const publications: Publication[] = [
 		</p>
 		<p class="mb-4">
 			My first name is "Young Sang" but I prefer to be called "Young" (like the opposite of "old").
+			<p class="leading-loose">
+				You can find my full professional history in my
+				<a href="/young_sang_choi_cv.pdf" class="cactus-link font-semibold" target="_blank"
+					>current CV</a
+				>
+				and reach me via email at:
+				<code
+					class="mt-2 block w-fit overflow-x-auto border border-gray-300/50 bg-gray-200/50 px-1 py-0.5 font-mono text-xs whitespace-nowrap sm:px-2 sm:py-1 sm:text-sm dark:border-gray-600/50 dark:bg-gray-700/50"
+				>
+					young[dot]sang[dot]choi[at]columbia[dot]edu
+				</code>
+			</p>
 		</p>
-		<p class="leading-loose">
-			You can find my full professional history in my <a
-				href="/young_sang_choi_cv.pdf"
-				class="cactus-link font-semibold"
-				target="_blank">current CV</a
-			> and reach me via email at <code
-				class="border border-gray-300/50 bg-gray-200/50 px-1 py-0.5 font-mono text-sm break-all whitespace-normal dark:border-gray-600/50 dark:bg-gray-700/50"
-				>young[dot]sang[dot]choi[at]columbia[dot]edu</code
-			>.
-		</p>
-	</section>
 
-	<section class="mt-12">
-		<h2 class="title text-accent mb-6">Research</h2>
-		<p class="mb-6">
-			My research sits on the intersection of multimodal learning, event stream modeling, and
-			trustworthy machine learning. I am particularly interested in how these fields converge to
-			create reliable AI-based systems that advance human health.
-		</p>
-		<p class="mb-6">Selected works listed below:</p>
+		<section class="mt-12">
+			<h2 class="title text-accent mb-6">Research</h2>
+			<p class="mb-6">
+				My research sits on the intersection of multimodal learning, event stream modeling, and
+				trustworthy machine learning. I am particularly interested in how these fields converge to
+				create reliable AI-based systems that advance human health.
+			</p>
+			<p class="mb-6">Selected works listed below:</p>
 
-		<ul class="space-y-4">
-			{
-				publications.map((paper) => (
-					<li class="bg-accent/5 block px-5 py-4">
-						<h3 class="text-accent text-lg font-bold" set:html={paper.title} />
+			<ul class="space-y-4">
+				{
+					publications.map((paper) => (
+						<li class="bg-accent/5 block px-5 py-4">
+							<h3 class="text-accent text-lg font-bold" set:html={paper.title} />
 
-						<p class="mt-2 text-sm text-gray-700 dark:text-gray-300" set:html={paper.authors} />
+							<p class="mt-2 text-sm text-gray-700 dark:text-gray-300" set:html={paper.authors} />
 
-						<p class="mt-1 text-sm text-gray-600 italic dark:text-gray-400">{paper.venue}</p>
+							<p class="mt-1 text-sm text-gray-600 italic dark:text-gray-400">{paper.venue}</p>
 
-						<div class="mt-3 flex gap-2 text-sm">
-							{paper.links.map((link) => (
-								<a
-									href={link.href}
-									class="cactus-link text-sm"
-									target="_blank"
-									rel="noopener noreferrer"
-								>
-									[{link.text}]
-								</a>
-							))}
-						</div>
-
-						{paper.tldr && (
-							<div class="border-accent/10 mt-3 border bg-white/50 p-2 text-sm text-gray-600 dark:bg-black/20 dark:text-gray-400">
-								<span class="text-accent font-bold">TL;DR:</span>
-								<span set:html={paper.tldr} />
+							<div class="mt-3 flex gap-2 text-sm">
+								{paper.links.map((link) => (
+									<a
+										href={link.href}
+										class="cactus-link text-sm"
+										target="_blank"
+										rel="noopener noreferrer"
+									>
+										[{link.text}]
+									</a>
+								))}
 							</div>
-						)}
-					</li>
-				))
-			}
-		</ul>
-	</section>
 
-	<section class="mt-12 mb-16">
-		<h2 class="title text-accent mb-6">Academic Service</h2>
+							{paper.tldr && (
+								<div class="border-accent/10 mt-3 border bg-white/50 p-2 text-sm text-gray-600 dark:bg-black/20 dark:text-gray-400">
+									<span class="text-accent font-bold">TL;DR:</span>
+									<span set:html={paper.tldr} />
+								</div>
+							)}
+						</li>
+					))
+				}
+			</ul>
+		</section>
 
-		<div class="space-y-4">
-			<div>
-				<h3 class="text-accent mb-1 font-semibold">Journal Reviewer</h3>
-				<ul class="text-sm text-gray-700 dark:text-gray-300">
-					<li class="flex items-start justify-between">
-						<span>Transactions on Machine Learning Research (TMLR)</span>
-					</li>
-				</ul>
+		<section class="mt-12 mb-16">
+			<h2 class="title text-accent mb-6">Academic Service</h2>
+
+			<div class="space-y-4">
+				<div>
+					<h3 class="text-accent mb-1 font-semibold">Journal Reviewer</h3>
+					<ul class="text-sm text-gray-700 dark:text-gray-300">
+						<li class="flex items-start justify-between">
+							<span>Transactions on Machine Learning Research (TMLR)</span>
+						</li>
+					</ul>
+				</div>
+
+				<div>
+					<h3 class="text-accent mb-1 font-semibold">Conference Reviewer</h3>
+					<ul class="space-y-1 text-sm text-gray-700 dark:text-gray-300">
+						<li class="flex items-start justify-between">
+							<span>Machine Learning for Healthcare (MLHC)</span>
+							<span class="ml-2 whitespace-nowrap text-gray-500">2024, 2025</span>
+						</li>
+						<li class="flex items-start justify-between">
+							<span
+								>International Conference on Medical Image Computing and Computer-Assisted
+								Intervention (MICCAI)</span
+							>
+							<span class="ml-2 whitespace-nowrap text-gray-500">2025</span>
+						</li>
+						<li class="flex items-start justify-between">
+							<span>Machine Learning for Health Symposium (ML4H)</span>
+							<span class="ml-2 whitespace-nowrap text-gray-500">2025</span>
+						</li>
+						<li class="flex items-start justify-between">
+							<span>American Medical Informatics Association (AMIA) Annual Symposium</span>
+							<span class="ml-2 whitespace-nowrap text-gray-500">2025</span>
+						</li>
+					</ul>
+				</div>
 			</div>
-
-			<div>
-				<h3 class="text-accent mb-1 font-semibold">Conference Reviewer</h3>
-				<ul class="space-y-1 text-sm text-gray-700 dark:text-gray-300">
-					<li class="flex items-start justify-between">
-						<span>Machine Learning for Healthcare (MLHC)</span>
-						<span class="ml-2 whitespace-nowrap text-gray-500">2024, 2025</span>
-					</li>
-					<li class="flex items-start justify-between">
-						<span
-							>International Conference on Medical Image Computing and Computer-Assisted
-							Intervention (MICCAI)</span
-						>
-						<span class="ml-2 whitespace-nowrap text-gray-500">2025</span>
-					</li>
-					<li class="flex items-start justify-between">
-						<span>Machine Learning for Health Symposium (ML4H)</span>
-						<span class="ml-2 whitespace-nowrap text-gray-500">2025</span>
-					</li>
-					<li class="flex items-start justify-between">
-						<span>American Medical Informatics Association (AMIA) Annual Symposium</span>
-						<span class="ml-2 whitespace-nowrap text-gray-500">2025</span>
-					</li>
-				</ul>
-			</div>
-		</div>
+		</section>
 	</section>
 </PageLayout>
