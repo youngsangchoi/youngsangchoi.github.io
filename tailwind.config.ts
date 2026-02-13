@@ -10,7 +10,7 @@ export default {
 				// Body text defaults to System Sans (Linear style)
 				sans: [...defaultTheme.fontFamily.sans],
 				// Headers will use System Mono
-				mono: [...defaultTheme.fontFamily.mono], 
+				mono: [...defaultTheme.fontFamily.mono],
 			},
 
 			// 2. Configure Markdown Typography
@@ -24,7 +24,7 @@ export default {
 							fontFamily: defaultTheme.fontFamily.mono.join(", "),
 							fontWeight: "600",
 						},
-						
+
 						// Existing settings (copy exact same logic)...
 						a: {
 							textUnderlineOffset: "2px",
@@ -42,7 +42,7 @@ export default {
 							border: "1px dotted #666",
 							borderRadius: "2px",
 						},
-                        // ... (keep the rest of your settings)
+						// ... (keep the rest of your settings)
 						kbd: {
 							"&:where([data-theme='dark'], [data-theme='dark'] *)": {
 								background: "var(--color-global-text)",
@@ -57,12 +57,12 @@ export default {
 						sup: {
 							marginInlineStart: "calc(var(--spacing) * 0.5)",
 							a: {
-                                "&:after": { content: "']'" },
-                                "&:before": { content: "'['" },
-                                "&:hover": {
-                                    "@media (hover: hover)": { color: "var(--color-link)" },
-                                },
-                            },
+								"&:after": { content: "']'" },
+								"&:before": { content: "'['" },
+								"&:hover": {
+									"@media (hover: hover)": { color: "var(--color-link)" },
+								},
+							},
 						},
 						"tbody tr": { borderBottomWidth: "none" },
 						tfoot: { borderTop: "1px dashed #666" },

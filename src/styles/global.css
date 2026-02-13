@@ -4,13 +4,15 @@
 @custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
 
 @theme {
-    /* LIGHT MODE: Ivy League (Blue & Cream) */
+    /* Keep your existing colors */
     --color-global-bg: oklch(95% 0.01 100); 
     --color-global-text: oklch(10% 0.01 264); 
     --color-link: oklch(55.44% 0.0431 185.69);
     --color-accent: oklch(26.6% 0.125 264.8);
     --color-accent-2: oklch(18.15% 0 0);
     --color-quote: oklch(26.6% 0.125 264.8);
+
+    --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 @layer base {
@@ -18,46 +20,34 @@
         color-scheme: light dark;
         accent-color: var(--color-accent);
         scrollbar-gutter: stable;
-        font-size: 1.125rem; 
+
+        /* READABILITY FIRST: Keeping the larger font size */
+        font-size: 1.2rem; 
 
         @media (min-width: 640px) {
-            font-size: 1.25rem; 
+            font-size: 1.4rem; 
         }
 
         &[data-theme="light"] {
             color-scheme: light;
         }
 
-        /* DARK MODE: Linear High-Contrast (Obsidian & White) */
         &[data-theme="dark"] {
             color-scheme: dark;
-            --color-global-bg: oklch(10% 0 0); 
-            --color-global-text: oklch(80% 0 0); 
-            --color-link: oklch(98% 0 0);
-            --color-accent: oklch(98% 0 0);
-            --color-accent-2: oklch(98% 0 0);
-            --color-quote: oklch(70% 0 0);
+            --color-global-bg: #1f1f1f; 
+            --color-global-text: #ada7a4; 
+            --color-link: #e0e0e0;
+            --color-accent: #e0e0e0;
+            --color-accent-2: #e0e0e0;
+            --color-quote: #ada7a4;
         }
     }
 
-    :target {
-        scroll-margin-block: 5ex;
-    }
-
-    @view-transition {
-        navigation: auto;
-    }
-
-    :where([data-astro-image]) {
-        object-fit: var(--fit);
-        object-position: var(--pos);
-    }
-    [data-astro-image="full-width"] {
-        width: 100%;
-    }
-    [data-astro-image="constrained"] {
-        max-width: 100%;
-    }
+    :target { scroll-margin-block: 5ex; }
+    @view-transition { navigation: auto; }
+    :where([data-astro-image]) { object-fit: var(--fit); object-position: var(--pos); }
+    [data-astro-image="full-width"] { width: 100%; }
+    [data-astro-image="constrained"] { max-width: 100%; }
 }
 
 @layer components {
@@ -69,18 +59,21 @@
     }
 
     .title {
-        @apply text-accent-2 text-2xl font-semibold font-mono;
+        @apply text-accent-2 text-3xl md:text-[40px] font-bold font-sans leading-none md:tracking-tight mb-8;
     }
 
-    /* FIXED: Bulletproof rule to stop code wrapping */
+    /* RECRUITER FIX 1: The Email Block */
+    /* Keeps the distinct background but perfects the alignment */
     .prose :where(code) {
-        white-space: pre !important;        /* Forces text to stay on one line */
-        word-break: keep-all !important;    /* Prevents breaking inside words */
-        overflow-wrap: normal !important;   /* Prevents breaking long strings */
-        display: inline-block !important;   /* Allows scrolling */
-        overflow-x: auto;                   /* Adds scrollbar if too long */
+        @apply font-mono text-sm md:text-base text-accent-2 bg-white/10 rounded px-2 py-1 mx-1;
+        
+        white-space: pre !important;        
+        word-break: keep-all !important;    
+        overflow-wrap: normal !important;   
+        display: inline-block !important;   
+        overflow-x: auto;                   
         max-width: 100%;
-        vertical-align: bottom;
+        vertical-align: baseline; /* Aligns perfectly with text flow */
     }
 }
 
@@ -94,4 +87,6 @@
     --tw-prose-links: var(--color-link);
     --tw-prose-quotes: var(--color-quote);
     --tw-prose-th-borders: #666;
+    
+    line-height: 1.6;
 }

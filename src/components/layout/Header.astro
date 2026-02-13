@@ -41,14 +41,22 @@ const socialLinks = [
 
 		<button
 			id="mobile-menu-btn"
-			class="group border-accent/20 bg-accent/5 relative flex h-9 w-auto items-center justify-center border px-4"
+			class="group border-accent/20 bg-accent/5 relative flex h-9 w-9 items-center justify-center border"
 			aria-label="Toggle Menu"
 		>
-			<span
-				class="text-accent text-sm font-bold tracking-widest uppercase group-[.menu-open]:opacity-50"
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				fill="none"
+				viewBox="0 0 24 24"
+				stroke-width="1.5"
+				stroke="currentColor"
+				class="text-accent h-5 w-5 transition-transform group-[.menu-open]:rotate-90 group-[.menu-open]:opacity-50"
 			>
-				Links
-			</span>
+				<path
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+			</svg>
 		</button>
 	</div>
 
