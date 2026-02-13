@@ -11,10 +11,14 @@ const socialLinks = [
 ---
 
 <header
-	class="group relative mb-6 flex items-center justify-between py-4 sm:mb-12"
 	id="main-header"
+	class="group relative mb-4 flex items-center justify-between py-2 sm:mb-8 sm:py-8"
 >
-	<a aria-current="page" class="text-lg font-bold sm:text-2xl" href="/">
+	<a
+		href="/"
+		class="hover:text-link text-lg font-bold transition-colors sm:text-2xl"
+		aria-current="page"
+	>
 		{siteConfig.title}
 	</a>
 
@@ -23,7 +27,7 @@ const socialLinks = [
 			{
 				socialLinks.map((link) => (
 					<a
-						class="text-accent text-base font-semibold hover:underline hover:underline-offset-4"
+						class="hover:text-link text-base font-semibold text-gray-600 transition-colors dark:text-gray-400"
 						href={link.href}
 						target="_blank"
 						rel="noopener noreferrer"
@@ -33,6 +37,8 @@ const socialLinks = [
 				))
 			}
 		</nav>
+
+		<span class="h-4 w-px bg-gray-300 dark:bg-gray-700"></span>
 		<ThemeToggle />
 	</div>
 
@@ -41,7 +47,7 @@ const socialLinks = [
 
 		<button
 			id="mobile-menu-btn"
-			class="group border-accent/20 bg-accent/5 relative flex h-9 w-9 items-center justify-center border"
+			class="group border-accent/20 bg-accent/5 relative flex h-9 w-9 items-center justify-center border transition-all active:scale-95"
 			aria-label="Toggle Menu"
 		>
 			<svg
@@ -50,7 +56,7 @@ const socialLinks = [
 				viewBox="0 0 24 24"
 				stroke-width="1.5"
 				stroke="currentColor"
-				class="text-accent h-5 w-5 transition-transform group-[.menu-open]:rotate-90 group-[.menu-open]:opacity-50"
+				class="text-accent h-5 w-5 transition-transform duration-300 group-[.menu-open]:rotate-90 group-[.menu-open]:opacity-50"
 			>
 				<path
 					stroke-linecap="round"
@@ -62,14 +68,15 @@ const socialLinks = [
 
 	<nav
 		id="mobile-menu"
-		class="border-accent/20 bg-global-bg absolute top-full left-0 z-50 hidden w-full flex-col border shadow-xl group-[.menu-open]:flex"
+		class="border-accent/20 bg-global-bg/95 absolute top-full left-0 z-50 hidden w-full flex-col border shadow-xl backdrop-blur-md group-[.menu-open]:flex"
 	>
 		{
 			socialLinks.map((link) => (
 				<a
-					class="text-accent hover:bg-accent/5 py-3 text-center text-sm font-semibold"
+					class="text-accent hover:bg-accent/5 border-b border-dashed border-gray-200 py-4 text-center text-sm font-semibold transition-colors dark:border-gray-800"
 					href={link.href}
 					target="_blank"
+					rel="noopener noreferrer"
 				>
 					{link.title}
 				</a>
