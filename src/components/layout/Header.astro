@@ -12,7 +12,7 @@ const socialLinks = [
 
 <header
 	id="main-header"
-	class="group relative mt-0 mb-4 flex items-center justify-between pt-0 pb-2 sm:mt-0 sm:mb-8 sm:pt-2 sm:pb-8"
+	class="group relative mt-0 mb-4 flex items-center justify-between pt-0 pb-2 sm:mt-4 sm:mb-8 sm:pt-4 sm:pb-8"
 >
 	<a
 		href="/"
@@ -22,8 +22,8 @@ const socialLinks = [
 		{siteConfig.title}
 	</a>
 
-	<div class="hidden items-center gap-4 sm:flex">
-		<nav class="flex items-center gap-x-5">
+	<div class="flex items-center gap-4">
+		<nav class="hidden items-center gap-x-5 sm:flex">
 			{
 				socialLinks.map((link) => (
 					<a
@@ -39,14 +39,10 @@ const socialLinks = [
 		</nav>
 
 		<ThemeToggle />
-	</div>
-
-	<div class="flex items-center gap-4 sm:hidden">
-		<ThemeToggle />
 
 		<button
 			id="mobile-menu-btn"
-			class="group border-accent/20 bg-accent/5 relative flex h-9 w-9 items-center justify-center border transition-all active:scale-95"
+			class="group border-accent/20 bg-accent/5 relative flex h-9 w-9 items-center justify-center border transition-all active:scale-95 sm:hidden"
 			aria-label="Toggle Menu"
 		>
 			<svg
