@@ -12,7 +12,8 @@
     --color-accent-2: oklch(18.15% 0 0);
     --color-quote: oklch(26.6% 0.125 264.8);
 
-    --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    /* THE FIX: "Inter" is now the first priority */
+    --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 @layer base {
@@ -62,8 +63,6 @@
         @apply text-accent-2 text-3xl md:text-[40px] font-bold font-sans leading-none md:tracking-tight mb-8;
     }
 
-    /* RECRUITER FIX 1: The Email Block */
-    /* Keeps the distinct background but perfects the alignment */
     .prose :where(code) {
         @apply font-mono text-sm md:text-base text-accent-2 bg-white/10 rounded px-2 py-1 mx-1;
         
@@ -71,7 +70,7 @@
         word-break: keep-all !important;    
         overflow-wrap: normal !important;   
         display: inline-block !important;   
-        overflow-x: auto;                   
+        overflow-x: auto;                    
         max-width: 100%;
         vertical-align: baseline; /* Aligns perfectly with text flow */
     }
