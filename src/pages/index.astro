@@ -8,6 +8,7 @@ interface Publication {
 	links: { text: string; href: string }[];
 	tldr?: string;
 	badge?: string;
+	bibtex?: string;
 }
 
 const publications: Publication[] = [
@@ -20,11 +21,15 @@ const publications: Publication[] = [
 		links: [
 			{ text: "arXiv", href: "https://arxiv.org/abs/2505.16953" },
 			{ text: "GitHub", href: "https://github.com/reAIM-Lab/ICYM2I" },
-			{
-				text: "OpenReview",
-				href: "https://openreview.net/forum?id=jC7FK8Rf4s",
-			},
+			{ text: "OpenReview", href: "https://openreview.net/forum?id=jC7FK8Rf4s" },
 		],
+		bibtex: `@inproceedings{choi2026icymi,
+title={{ICYM}2I: The illusion of multimodal informativeness under missingness},
+author={Young Sang Choi and Vincent Jeanselme and Pierre Elias and Shalmali Joshi},
+booktitle={The Fourteenth International Conference on Learning Representations},
+year={2026},
+url={https://openreview.net/forum?id=jC7FK8Rf4s}
+}`,
 	},
 	{
 		title: "FoMoH: A Clinically Meaningful Foundation Model Evaluation",
@@ -37,6 +42,12 @@ const publications: Publication[] = [
 			{ text: "arXiv", href: "https://arxiv.org/abs/2505.16941" },
 			{ text: "GitHub", href: "https://github.com/reAIM-Lab/ehr_foundation_model_benchmark" },
 		],
+		bibtex: `@article{pang2025fomoh,
+title={FoMoH: A clinically meaningful foundation model evaluation for structured electronic health records},
+author={Pang, Chao and Jeanselme, Vincent and Choi, Young Sang and Jiang, Xinzhuo and others},
+journal={arXiv preprint arXiv:2505.16941},
+year={2025}
+}`,
 	},
 ];
 ---
@@ -87,115 +98,164 @@ const publications: Publication[] = [
 				>
 				and reach me via email at:
 				<code
-					class="mt-2 block w-full rounded border border-gray-200 bg-gray-50 px-3 py-2 font-mono text-xs break-all text-gray-600 sm:w-fit sm:text-sm dark:border-gray-800 dark:bg-white/5 dark:text-gray-400"
+					class="mt-2 block w-full rounded bg-gray-50 px-3 py-2 font-mono text-xs break-all text-gray-600 sm:w-fit sm:text-sm dark:bg-white/5 dark:text-gray-400"
 				>
 					young[dot]sang[dot]choi[at]columbia[dot]edu
 				</code>
 			</p>
-		</div>
 
-		<section class="mt-24">
-			<h2 class="title text-accent mb-8 text-xl font-bold sm:text-2xl">Research</h2>
-			<p class="mb-8 leading-relaxed text-gray-600 dark:text-gray-400">
-				My research sits on the intersection of <strong
-					class="font-semibold text-gray-900 dark:text-gray-100">multimodal learning</strong
-				>, <strong class="font-semibold text-gray-900 dark:text-gray-100"
-					>event stream modeling</strong
-				>, and <strong class="font-semibold text-gray-900 dark:text-gray-100"
-					>trustworthy machine learning</strong
-				>. I am particularly interested in how these fields converge to create reliable AI-based
-				systems that advance <strong class="font-semibold text-gray-900 dark:text-gray-100"
-					>human health</strong
-				>.
-			</p>
+			<section class="mt-24">
+				<h2 class="title text-accent mb-8 text-xl font-bold sm:text-2xl">Research</h2>
+				<p class="mb-8 leading-relaxed text-gray-600 dark:text-gray-400">
+					My research sits on the intersection of <strong
+						class="font-semibold text-gray-900 dark:text-gray-100">multimodal learning</strong
+					>, <strong class="font-semibold text-gray-900 dark:text-gray-100"
+						>event stream modeling</strong
+					>, and <strong class="font-semibold text-gray-900 dark:text-gray-100"
+						>trustworthy machine learning</strong
+					>. I am particularly interested in how these fields converge to create reliable AI-based
+					systems that <strong class="font-semibold text-gray-900 dark:text-gray-100"
+						>advance human health</strong
+					>.
+				</p>
 
-			<ul class="space-y-10">
-				{
-					publications.map((paper) => (
-						<li class="bg-accent/5 block rounded-sm px-5 py-5">
-							{paper.badge && (
-								<span class="border-accent/0 bg-accent/10 text-accent mb-3 inline-block rounded-sm border px-2 py-0.5 text-xs font-bold">
-									{paper.badge}
-								</span>
-							)}
-
-							<h3
-								class="text-lg leading-tight font-bold text-gray-900 sm:text-xl dark:text-gray-100"
-								set:html={paper.title}
-							/>
-
-							<div class="mt-3 text-sm text-gray-500 dark:text-gray-400">
-								<span set:html={paper.authors} />
-							</div>
-
-							<div class="mt-4 flex gap-3 text-sm font-medium">
-								{paper.links.map((link) => (
-									<a
-										href={link.href}
-										class="cactus-link decoration-accent/30 hover:decoration-accent text-sm underline underline-offset-4"
-										target="_blank"
-										rel="noopener noreferrer"
-									>
-										[{link.text}]
-									</a>
-								))}
-							</div>
-
-							{paper.tldr && (
-								<div class="mt-4 flex items-start gap-x-2 border-t border-gray-200 pt-3 dark:border-gray-700/50">
-									<span class="shrink-0 text-sm font-bold text-gray-900 dark:text-gray-100">
-										TL;DR:
+				<ul class="space-y-10">
+					{
+						publications.map((paper) => (
+							<li class="bg-accent/5 block rounded-sm px-5 py-5">
+								{paper.badge && (
+									<span class="border-accent/0 bg-accent/10 text-accent mb-3 inline-block rounded-sm border px-2 py-0.5 text-xs font-bold">
+										{paper.badge}
 									</span>
-									<span
-										class="text-sm leading-relaxed text-gray-600 dark:text-gray-300"
-										set:html={paper.tldr}
-									/>
+								)}
+
+								<h3
+									class="text-lg leading-tight font-bold text-gray-900 sm:text-xl dark:text-gray-100"
+									set:html={paper.title}
+								/>
+
+								<div class="mt-3 text-sm text-gray-500 dark:text-gray-400">
+									<span set:html={paper.authors} />
 								</div>
-							)}
-						</li>
-					))
-				}
-			</ul>
-		</section>
 
-		<section class="mt-24 mb-24">
-			<h2 class="title text-accent mb-6 text-xl font-bold sm:text-2xl">Academic Service</h2>
+								<div class="mt-4 flex flex-wrap gap-4 text-sm font-medium">
+									{paper.links.map((link) => (
+										<a
+											href={link.href}
+											class="cactus-link decoration-accent/30 hover:decoration-accent text-sm font-bold underline underline-offset-4"
+											target="_blank"
+											rel="noopener noreferrer"
+										>
+											{link.text}
+										</a>
+									))}
 
-			<div class="space-y-4">
-				<div>
-					<h3 class="text-accent mb-1 font-semibold">Journal Reviewer</h3>
-					<ul class="text-sm text-gray-700 dark:text-gray-300">
-						<li class="flex items-start justify-between">
-							<span>Transactions on Machine Learning Research (TMLR)</span>
-						</li>
-					</ul>
+									{paper.bibtex && (
+										<details class="group bibtex-details relative">
+											<summary class="cactus-link decoration-accent/30 hover:decoration-accent flex cursor-pointer list-none items-center gap-1 text-sm font-bold underline underline-offset-4 outline-none select-none">
+												BibTeX
+												<svg
+													xmlns="http://www.w3.org/2000/svg"
+													class="h-3 w-3 shrink-0 transition-transform duration-200 group-open:rotate-180"
+													fill="none"
+													viewBox="0 0 24 24"
+													stroke="currentColor"
+												>
+													<path
+														stroke-linecap="round"
+														stroke-linejoin="round"
+														stroke-width="2"
+														d="M19 9l-7 7-7-7"
+													/>
+												</svg>
+											</summary>
+											<div class="relative mt-3 overflow-hidden rounded-sm bg-gray-50 dark:bg-white/5">
+												<button
+													class="copy-bibtex bg-accent/10 text-accent hover:bg-accent/20 absolute top-2 right-2 rounded px-2 py-1 text-[10px] font-bold transition-colors"
+													data-bibtex={paper.bibtex}
+												>
+													Copy
+												</button>
+												<pre class="p-4 text-left font-mono text-[10px] leading-relaxed whitespace-pre-wrap text-gray-700 sm:text-xs dark:text-gray-300">
+													<code>{paper.bibtex}</code>
+												</pre>
+											</div>
+										</details>
+									)}
+								</div>
+
+								{paper.tldr && (
+									<div class="mt-4 flex flex-col gap-y-1 border-t border-gray-200 pt-3 sm:flex-row sm:gap-x-2 dark:border-gray-700/50">
+										<span class="shrink-0 text-sm font-bold text-gray-900 dark:text-gray-100">
+											TL;DR:
+										</span>
+										<span
+											class="text-sm leading-relaxed text-gray-600 dark:text-gray-300"
+											set:html={paper.tldr}
+										/>
+									</div>
+								)}
+							</li>
+						))
+					}
+				</ul>
+			</section>
+
+			<section class="mt-24 mb-24">
+				<h2 class="title text-accent mb-6 text-xl font-bold sm:text-2xl">Academic Service</h2>
+				<div class="space-y-4">
+					<div>
+						<h3 class="text-accent mb-1 font-semibold">Journal Reviewer</h3>
+						<ul class="text-sm text-gray-700 dark:text-gray-300">
+							<li class="flex items-start justify-between">
+								<span>Transactions on Machine Learning Research (TMLR)</span>
+							</li>
+						</ul>
+					</div>
+					<div>
+						<h3 class="text-accent mb-1 font-semibold">Conference Reviewer</h3>
+						<ul class="space-y-1 text-sm text-gray-700 dark:text-gray-300">
+							<li class="flex items-start justify-between">
+								<span>Machine Learning for Healthcare (MLHC)</span>
+								<span class="ml-2 whitespace-nowrap text-gray-500">2024, 2025</span>
+							</li>
+							<li class="flex items-start justify-between">
+								<span
+									>International Conference on Medical Image Computing and Computer-Assisted
+									Intervention (MICCAI)</span
+								>
+								<span class="ml-2 whitespace-nowrap text-gray-500">2025</span>
+							</li>
+							<li class="flex items-start justify-between">
+								<span>Machine Learning for Health Symposium (ML4H)</span>
+								<span class="ml-2 whitespace-nowrap text-gray-500">2025</span>
+							</li>
+							<li class="flex items-start justify-between">
+								<span>American Medical Informatics Association (AMIA) Annual Symposium</span>
+								<span class="ml-2 whitespace-nowrap text-gray-500">2025</span>
+							</li>
+						</ul>
+					</div>
 				</div>
-
-				<div>
-					<h3 class="text-accent mb-1 font-semibold">Conference Reviewer</h3>
-					<ul class="space-y-1 text-sm text-gray-700 dark:text-gray-300">
-						<li class="flex items-start justify-between">
-							<span>Machine Learning for Healthcare (MLHC)</span>
-							<span class="ml-2 whitespace-nowrap text-gray-500">2024, 2025</span>
-						</li>
-						<li class="flex items-start justify-between">
-							<span
-								>International Conference on Medical Image Computing and Computer-Assisted
-								Intervention (MICCAI)</span
-							>
-							<span class="ml-2 whitespace-nowrap text-gray-500">2025</span>
-						</li>
-						<li class="flex items-start justify-between">
-							<span>Machine Learning for Health Symposium (ML4H)</span>
-							<span class="ml-2 whitespace-nowrap text-gray-500">2025</span>
-						</li>
-						<li class="flex items-start justify-between">
-							<span>American Medical Informatics Association (AMIA) Annual Symposium</span>
-							<span class="ml-2 whitespace-nowrap text-gray-500">2025</span>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</section>
+			</section>
+		</div>
 	</section>
 </PageLayout>
+
+<script>
+	document.querySelectorAll(".copy-bibtex").forEach((button) => {
+		button.addEventListener("click", () => {
+			const bibtex = button.getAttribute("data-bibtex");
+
+			if (bibtex) {
+				navigator.clipboard.writeText(bibtex).then(() => {
+					const originalText = button.textContent;
+					button.textContent = "Copied!";
+					setTimeout(() => {
+						button.textContent = originalText;
+					}, 2000);
+				});
+			}
+		});
+	});
+</script>
