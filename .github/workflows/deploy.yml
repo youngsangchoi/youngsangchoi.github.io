@@ -19,11 +19,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@v4
+
+      - name: Force Git to use HTTPS
+        run: git config --global url."https://github.com/".insteadOf git@github.com:
 
       - name: Install, build, and upload
         uses: withastro/action@v5
-        # This action automatically detects pnpm/npm and builds your site.
 
   deploy:
     needs: build
