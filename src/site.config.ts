@@ -14,7 +14,7 @@ export const siteConfig: SiteConfig = {
 		},
 	},
 	// Used as the default description meta property and webmanifest description
-	description: "Doctoral student in Biomedical Informatics at Columbia University.",
+	description: "Researcher in multimodal learning, event-stream modeling, and trustworthy machine learning.",
 	// HTML lang property, found in src/layouts/Base.astro L:18 & astro.config.ts L:48
 	lang: "en-US",
 	// Meta property, found in src/components/BaseHead.astro L:42
@@ -22,6 +22,7 @@ export const siteConfig: SiteConfig = {
 	title: "Young Sang Choi",
 	// ! Please remember to replace the following site property with your own domain, used in astro.config.ts
 	url: "https://youngsangchoi.github.io/",
+	// ogImage:
 };
 
 // Used to generate links in both the Header & Footer.
