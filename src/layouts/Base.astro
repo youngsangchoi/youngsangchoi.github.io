@@ -2,39 +2,37 @@
 import BaseHead from "@/components/BaseHead.astro";
 import Footer from "@/components/layout/Footer.astro";
 import SkipLink from "@/components/SkipLink.astro";
-import ThemeProvider from "@/components/ThemeProvider.astro";
 import { siteConfig } from "@/site.config";
 import type { SiteMeta } from "@/types";
 
 interface Props {
-	meta: SiteMeta;
+    meta: SiteMeta;
 }
 
 const {
-	meta: { articleDate, description = siteConfig.description, ogImage, title },
+    meta: { articleDate, description = siteConfig.description, ogImage, title },
 } = Astro.props;
 ---
 
-<html class="scroll-smooth" lang={siteConfig.lang}>
-	<head>
-		<BaseHead articleDate={articleDate} description={description} ogImage={ogImage} title={title} />
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
-			rel="stylesheet"
-		/>
-	</head>
-	<body
-		class="bg-global-bg text-global-text mx-auto flex min-h-screen max-w-2xl flex-col px-4 font-sans text-base font-normal antialiased sm:px-8 sm:text-lg"
-	>
-		<SkipLink />
-		<ThemeProvider />
+<html class="scroll-smooth dark" lang={siteConfig.lang}>
+    <head>
+        <BaseHead articleDate={articleDate} description={description} ogImage={ogImage} title={title} />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+    <body
+        class="bg-global-bg text-global-text mx-auto flex min-h-screen max-w-2xl flex-col px-4 font-sans text-base font-normal antialiased sm:px-8 sm:text-lg"
+    >
+        <SkipLink />
 
-		<main class="flex flex-grow flex-col">
-			<div class="my-auto py-12 pb-[10vh] sm:py-24">
-				<slot />
-			</div>
-		</main>
-	</body>
+        <main class="flex flex-grow flex-col">
+            <div class="my-auto py-12 pb-[10vh] sm:py-24">
+                <slot />
+            </div>
+        </main>
+    </body>
 </html>
