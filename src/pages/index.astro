@@ -12,7 +12,8 @@ interface Publication {
 const publications: Publication[] = [
 	{
 		title: "ICYM<sup>2</sup>I: The Illusion of Multimodal Informativeness under Missingness",
-		authors: "Young Sang Choi*, Vincent Jeanselme*, Pierre Elias, and Shalmali Joshi",
+		authors:
+			"<strong>Young Sang Choi*</strong>, Vincent Jeanselme*, Pierre Elias, and Shalmali Joshi",
 		venue: "ICLR 2026",
 		links: [
 			{ text: "arXiv →", href: "https://arxiv.org/abs/2505.16953" },
@@ -24,7 +25,7 @@ const publications: Publication[] = [
 	{
 		title: "FoMoH: A Clinically Meaningful Foundation Model Evaluation",
 		authors:
-			"Chao Pang*, Vincent Jeanselme*, Young Sang Choi, Xinzhuo Jiang, Zilin Jing, Aparajita Kashyap, Yuta Kobayashi, Yanwei Li, Florent Pollet, Karthik Natarajan, and Shalmali Joshi",
+			"Chao Pang*, Vincent Jeanselme*, <strong>Young Sang Choi</strong>, Xinzhuo Jiang, Zilin Jing, Aparajita Kashyap, Yuta Kobayashi, Yanwei Li, Florent Pollet, Karthik Natarajan, and Shalmali Joshi",
 		venue: "Preprint 2025",
 		links: [
 			{ text: "arXiv →", href: "https://arxiv.org/abs/2505.16941" },
@@ -123,7 +124,7 @@ const publications: Publication[] = [
 			</a>
 		</div>
 
-		<div class="mb-8">
+		<div class="mb-12">
 			<h2 class="mb-6 text-sm font-bold tracking-widest text-gray-400 uppercase">Selected Works</h2>
 			<ul class="flex flex-col gap-8">
 				{
@@ -184,11 +185,36 @@ const publications: Publication[] = [
 				}
 			</ul>
 		</div>
+
+		<div class="mb-8">
+			<h2 class="mb-6 text-sm font-bold tracking-widest text-gray-400 uppercase">
+				Professional Service
+			</h2>
+			<div class="space-y-6 text-base text-gray-500 dark:text-gray-400">
+				<div class="flex flex-col gap-1">
+					<p class="font-bold text-gray-900 dark:text-gray-100">Journal Reviewer:</p>
+					<p>Transactions on Machine Learning Research (TMLR).</p>
+				</div>
+				<div class="flex flex-col gap-1">
+					<p class="font-bold text-gray-900 dark:text-gray-100">Conference Reviewer:</p>
+					<ul class="flex flex-col gap-1">
+						<li>International Conference on Machine Learning (ICML): 2026.</li>
+						<li>Machine Learning for Healthcare (MLHC): 2024, 2025.</li>
+						<li>
+							International Conference on Medical Image Computing and Computer-Assisted Intervention
+							(MICCAI): 2025.
+						</li>
+						<li>Machine Learning for Health Symposium (ML4H): 2025.</li>
+						<li>American Medical Informatics Association Annual Symposium (AMIA): 2025.</li>
+					</ul>
+				</div>
+			</div>
+		</div>
 	</section>
 </PageLayout>
 
 <script>
-	document.addEventListener("DOMContentLoaded", () => {
+	function initInteractiveElements() {
 		const toggle = document.getElementById("email-toggle");
 		const container = document.getElementById("email-container");
 		const arrow = document.getElementById("email-arrow") as HTMLElement;
@@ -202,71 +228,88 @@ const publications: Publication[] = [
 			display.textContent = `${u}@${d}.${t}`;
 		}
 
-		toggle?.addEventListener("click", () => {
-			const isClosed = container?.classList.contains("max-w-0");
-			if (isClosed) {
-				container?.classList.replace("max-w-0", "max-w-md");
-				container?.classList.replace("opacity-0", "opacity-100");
-				if (arrow) arrow.style.transform = "rotate(180deg)";
-			} else {
-				container?.classList.replace("max-w-md", "max-w-0");
-				container?.classList.replace("opacity-100", "opacity-0");
-				if (arrow) arrow.style.transform = "rotate(0deg)";
-			}
-		});
-
-		copyBtn?.addEventListener("click", (e) => {
-			e.stopPropagation();
-			const u = copyBtn.getAttribute("data-u");
-			const d = copyBtn.getAttribute("data-d");
-			const t = copyBtn.getAttribute("data-t");
-			const email = `${u}@${d}.${t}`;
-			if (email) {
-				navigator.clipboard.writeText(email).then(() => {
-					const originalText = copyBtn.textContent;
-					copyBtn.textContent = "Copied!";
-					setTimeout(() => {
-						copyBtn.textContent = originalText;
-					}, 2000);
-				});
-			}
-		});
-	});
-
-	document.querySelectorAll(".toggle-bibtex").forEach((btn) => {
-		btn.addEventListener("click", () => {
-			const targetId = btn.getAttribute("data-target");
-			const arrow = btn.querySelector(".bibtex-arrow") as HTMLElement;
-			if (targetId) {
-				const targetEl = document.getElementById(targetId);
-				if (targetEl) {
-					const isClosed = targetEl.classList.contains("max-h-0");
-					if (isClosed) {
-						targetEl.classList.replace("max-h-0", "max-h-[500px]");
-						targetEl.classList.replace("opacity-0", "opacity-100");
-						if (arrow) arrow.style.transform = "rotate(90deg)";
-					} else {
-						targetEl.classList.replace("max-h-[500px]", "max-h-0");
-						targetEl.classList.replace("opacity-100", "opacity-0");
-						if (arrow) arrow.style.transform = "rotate(0deg)";
-					}
+		if (toggle && !toggle.dataset.bound) {
+			toggle.dataset.bound = "true";
+			toggle.addEventListener("click", () => {
+				const isClosed = container?.classList.contains("max-w-0");
+				if (isClosed) {
+					container?.classList.replace("max-w-0", "max-w-md");
+					container?.classList.replace("opacity-0", "opacity-100");
+					if (arrow) arrow.style.transform = "rotate(180deg)";
+				} else {
+					container?.classList.replace("max-w-md", "max-w-0");
+					container?.classList.replace("opacity-100", "opacity-0");
+					if (arrow) arrow.style.transform = "rotate(0deg)";
 				}
-			}
-		});
-	});
+			});
+		}
 
-	document.querySelectorAll(".copy-bibtex").forEach((button) => {
-		button.addEventListener("click", () => {
-			const bibtex = button.getAttribute("data-bibtex");
-			if (bibtex) {
-				navigator.clipboard.writeText(bibtex).then(() => {
-					const originalText = button.textContent;
-					button.textContent = "Copied!";
-					setTimeout(() => {
-						button.textContent = originalText;
-					}, 2000);
+		if (copyBtn && !copyBtn.dataset.bound) {
+			copyBtn.dataset.bound = "true";
+			copyBtn.addEventListener("click", (e) => {
+				e.stopPropagation();
+				const u = copyBtn.getAttribute("data-u");
+				const d = copyBtn.getAttribute("data-d");
+				const t = copyBtn.getAttribute("data-t");
+				const email = `${u}@${d}.${t}`;
+				if (email) {
+					navigator.clipboard.writeText(email).then(() => {
+						const originalText = copyBtn.textContent;
+						copyBtn.textContent = "Copied!";
+						setTimeout(() => {
+							copyBtn.textContent = originalText;
+						}, 2000);
+					});
+				}
+			});
+		}
+
+		document.querySelectorAll(".toggle-bibtex").forEach((btn) => {
+			const buttonElement = btn as HTMLElement;
+			if (!buttonElement.dataset.bound) {
+				buttonElement.dataset.bound = "true";
+				buttonElement.addEventListener("click", () => {
+					const targetId = buttonElement.getAttribute("data-target");
+					const bibtexArrow = buttonElement.querySelector(".bibtex-arrow") as HTMLElement;
+					if (targetId) {
+						const targetEl = document.getElementById(targetId);
+						if (targetEl) {
+							const isClosed = targetEl.classList.contains("max-h-0");
+							if (isClosed) {
+								targetEl.classList.replace("max-h-0", "max-h-[500px]");
+								targetEl.classList.replace("opacity-0", "opacity-100");
+								if (bibtexArrow) bibtexArrow.style.transform = "rotate(90deg)";
+							} else {
+								targetEl.classList.replace("max-h-[500px]", "max-h-0");
+								targetEl.classList.replace("opacity-100", "opacity-0");
+								if (bibtexArrow) bibtexArrow.style.transform = "rotate(0deg)";
+							}
+						}
+					}
 				});
 			}
 		});
-	});
+
+		document.querySelectorAll(".copy-bibtex").forEach((button) => {
+			const copyElement = button as HTMLElement;
+			if (!copyElement.dataset.bound) {
+				copyElement.dataset.bound = "true";
+				copyElement.addEventListener("click", () => {
+					const bibtex = copyElement.getAttribute("data-bibtex");
+					if (bibtex) {
+						navigator.clipboard.writeText(bibtex).then(() => {
+							const originalText = copyElement.textContent;
+							copyElement.textContent = "Copied!";
+							setTimeout(() => {
+								copyElement.textContent = originalText;
+							}, 2000);
+						});
+					}
+				});
+			}
+		});
+	}
+
+	document.addEventListener("DOMContentLoaded", initInteractiveElements);
+	document.addEventListener("astro:page-load", initInteractiveElements);
 </script>
