@@ -39,22 +39,22 @@ const publications: Publication[] = [
 ---
 
 <PageLayout meta={{ title: "Home" }}>
-	<section class="max-w-2xl leading-relaxed text-gray-500 dark:text-gray-400">
+	<section class="max-w-2xl leading-relaxed text-gray-400">
 		<div class="mb-6 space-y-6">
 			<p>
 				Young Sang "Young" Choi is a doctoral student advised by <a
 					href="https://reaim-lab.github.io/shalmalijoshi.html"
-					class="font-bold text-gray-900 underline decoration-solid underline-offset-4 dark:text-gray-100"
+					class="font-bold text-gray-100 underline decoration-solid underline-offset-4"
 					target="_blank"
 					rel="noopener noreferrer">Dr. Shalmali Joshi</a
 				> and <a
 					href="https://pierreelias.github.io/Elias_Bio.html"
-					class="font-bold text-gray-900 underline decoration-solid underline-offset-4 dark:text-gray-100"
+					class="font-bold text-gray-100 underline decoration-solid underline-offset-4"
 					target="_blank"
 					rel="noopener noreferrer">Dr. Pierre Elias</a
 				> at Columbia University and a research intern on the <a
 					href="https://sra.samsung.com/research-area/digital-health/"
-					class="font-bold text-gray-900 underline decoration-solid underline-offset-4 dark:text-gray-100"
+					class="font-bold text-gray-100 underline decoration-solid underline-offset-4"
 					target="_blank"
 					rel="noopener noreferrer">Digital Health Algorithms</a
 				> team at Samsung Research America (SRA).
@@ -62,12 +62,12 @@ const publications: Publication[] = [
 
 			<p>
 				His research sits on the intersection of <strong
-					class="font-bold text-gray-900 dark:text-gray-100">multimodal learning</strong
-				>, <strong class="font-bold text-gray-900 dark:text-gray-100">event stream modeling</strong
-				>, and <strong class="font-bold text-gray-900 dark:text-gray-100"
+					class="font-bold text-gray-100">multimodal learning</strong
+				>, <strong class="font-bold text-gray-100">event stream modeling</strong
+				>, and <strong class="font-bold text-gray-100"
 					>trustworthy machine learning</strong
 				>. He is particularly interested in how these fields converge to create reliable AI-based
-				systems that <strong class="font-bold text-gray-900 dark:text-gray-100"
+				systems that <strong class="font-bold text-gray-100"
 					>advance human health</strong
 				>.
 			</p>
@@ -76,7 +76,7 @@ const publications: Publication[] = [
 		<div class="mb-12 flex flex-col gap-0">
 			<div
 				id="email-toggle"
-				class="group flex w-fit cursor-pointer items-center gap-2 text-gray-900 transition-colors select-none hover:text-gray-500 dark:text-gray-100 dark:hover:text-gray-400"
+				class="group flex w-fit cursor-pointer items-center gap-2 text-gray-100 transition-colors select-none hover:text-gray-400"
 			>
 				<span>Email</span>
 				<div
@@ -85,9 +85,9 @@ const publications: Publication[] = [
 				>
 					<span
 						id="email-display"
-						class="font-mono text-xs whitespace-nowrap text-gray-500 dark:text-gray-400"></span>
+						class="font-mono text-xs whitespace-nowrap text-gray-400"></span>
 					<button
-						class="copy-email rounded bg-gray-200 px-2 py-1 text-[10px] font-bold text-gray-900 transition-colors hover:bg-gray-300 dark:bg-white/10 dark:text-gray-100 dark:hover:bg-white/20"
+						class="copy-email rounded bg-white/10 px-2 py-1 text-[10px] font-bold text-gray-100 transition-colors hover:bg-white/20"
 						data-u="young.sang.choi"
 						data-d="columbia"
 						data-t="edu"
@@ -100,14 +100,14 @@ const publications: Publication[] = [
 
 			<a
 				href="/young_sang_choi_cv.pdf"
-				class="group flex w-fit items-center gap-2 text-gray-900 transition-colors hover:text-gray-500 dark:text-gray-100 dark:hover:text-gray-400"
+				class="group flex w-fit items-center gap-2 text-gray-100 transition-colors hover:text-gray-400"
 				target="_blank"
 			>
 				<span>Current CV →</span>
 			</a>
 			<a
 				href="https://scholar.google.com/citations?hl=en&user=cX-zhzAAAAAJ"
-				class="group flex w-fit items-center gap-2 text-gray-900 transition-colors hover:text-gray-500 dark:text-gray-100 dark:hover:text-gray-400"
+				class="group flex w-fit items-center gap-2 text-gray-100 transition-colors hover:text-gray-400"
 				target="_blank"
 				rel="noopener noreferrer"
 			>
@@ -115,7 +115,7 @@ const publications: Publication[] = [
 			</a>
 			<a
 				href="https://github.com/youngsangchoi"
-				class="group flex w-fit items-center gap-2 text-gray-900 transition-colors hover:text-gray-500 dark:text-gray-100 dark:hover:text-gray-400"
+				class="group flex w-fit items-center gap-2 text-gray-100 transition-colors hover:text-gray-400"
 				target="_blank"
 				rel="noopener noreferrer"
 			>
@@ -123,7 +123,7 @@ const publications: Publication[] = [
 			</a>
 			<a
 				href="https://www.linkedin.com/in/youngsangchoi/"
-				class="group flex w-fit items-center gap-2 text-gray-900 transition-colors hover:text-gray-500 dark:text-gray-100 dark:hover:text-gray-400"
+				class="group flex w-fit items-center gap-2 text-gray-100 transition-colors hover:text-gray-400"
 				target="_blank"
 				rel="noopener noreferrer"
 			>
@@ -137,18 +137,18 @@ const publications: Publication[] = [
 				{
 					publications.map((paper, index) => (
 						<li class="flex flex-col gap-2 text-base">
-							<h3 class="font-bold text-gray-900 dark:text-gray-100" set:html={paper.title} />
-							<div class="leading-relaxed text-gray-500 dark:text-gray-400">
+							<h3 class="font-bold text-gray-100" set:html={paper.title} />
+							<div class="leading-relaxed text-gray-400">
 								<span set:html={paper.authors} />
 							</div>
-							<div class="text-gray-500 dark:text-gray-400">{paper.venue}</div>
+							<div class="text-gray-400">{paper.venue}</div>
 
 							<div>
-								<div class="mt-2 flex flex-wrap gap-4 text-sm font-bold text-gray-900 dark:text-gray-100">
+								<div class="mt-2 flex flex-wrap gap-4 text-sm font-bold text-gray-100">
 									{paper.links.map((link) => (
 										<a
 											href={link.href}
-											class="transition-colors hover:text-gray-500 dark:hover:text-gray-400"
+											class="transition-colors hover:text-gray-400"
 											target="_blank"
 											rel="noopener noreferrer"
 										>
@@ -157,7 +157,7 @@ const publications: Publication[] = [
 									))}
 									{paper.bibtex && (
 										<button
-											class="toggle-bibtex flex cursor-pointer items-center gap-1 transition-colors outline-none select-none hover:text-gray-500 dark:hover:text-gray-400"
+											class="toggle-bibtex flex cursor-pointer items-center gap-1 transition-colors outline-none select-none hover:text-gray-400"
 											data-target={`bibtex-${index}`}
 										>
 											BibTeX{" "}
@@ -171,16 +171,16 @@ const publications: Publication[] = [
 								{paper.bibtex && (
 									<div
 										id={`bibtex-${index}`}
-										class="relative mt-4 max-h-0 w-full overflow-hidden bg-gray-50 opacity-0 transition-all duration-500 ease-in-out dark:bg-white/5"
+										class="relative mt-4 max-h-0 w-full overflow-hidden bg-white/5 opacity-0 transition-all duration-500 ease-in-out"
 									>
 										<div class="p-4">
 											<button
-												class="copy-bibtex absolute top-4 right-4 rounded bg-gray-200 px-2 py-1 text-[10px] font-bold text-gray-900 transition-colors hover:bg-gray-300 dark:bg-white/10 dark:text-gray-100 dark:hover:bg-white/20"
+												class="copy-bibtex absolute top-4 right-4 rounded bg-white/10 px-2 py-1 text-[10px] font-bold text-gray-100 transition-colors hover:bg-white/20"
 												data-bibtex={paper.bibtex}
 											>
 												Copy
 											</button>
-											<pre class="text-left font-mono text-[10px] leading-relaxed whitespace-pre-wrap text-gray-700 sm:text-xs dark:text-gray-300">
+											<pre class="text-left font-mono text-[10px] leading-relaxed whitespace-pre-wrap text-gray-300 sm:text-xs">
 												<code set:text={paper.bibtex} />
 											</pre>
 										</div>
@@ -197,13 +197,13 @@ const publications: Publication[] = [
 			<h2 class="mb-6 text-sm font-bold tracking-widest text-gray-400 uppercase">
 				Professional Service
 			</h2>
-			<div class="space-y-6 text-base text-gray-500 dark:text-gray-400">
+			<div class="space-y-6 text-base text-gray-400">
 				<div class="flex flex-col gap-1">
-					<p class="font-bold text-gray-900 dark:text-gray-100">Journal Reviewer:</p>
+					<p class="font-bold text-gray-100">Journal Reviewer:</p>
 					<p>Transactions on Machine Learning Research (TMLR)</p>
 				</div>
 				<div class="flex flex-col gap-1">
-					<p class="font-bold text-gray-900 dark:text-gray-100">Conference Reviewer:</p>
+					<p class="font-bold text-gray-100">Conference Reviewer:</p>
 					<ul class="flex flex-col gap-1">
 						<li>International Conference on Machine Learning (ICML): 2026<sup>&dagger;</sup></li>
 						<li>Machine Learning for Healthcare (MLHC): 2024, 2025, 2026</li>
