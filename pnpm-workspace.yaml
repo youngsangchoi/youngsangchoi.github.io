@@ -1,0 +1,20 @@
+packages:
+  - "."
+
+allowBuilds:
+  "@biomejs/biome": true
+  "@tailwindcss/oxide": true
+  esbuild: true
+  sharp: true
+
+overrides:
+  sharp: ^0.34.5
+  devalue: ">=5.6.2"
+  h3: ">=1.15.5"
+  diff: ">=5.2.2"
+  rollup: ">=4.9.1"
+  ajv: ">=8.18.0"
+  yaml: ">=2.8.3"
+  vite: ^7.3.5
+  esbuild: ^0.28.1
+  js-yaml: ^4.3.0

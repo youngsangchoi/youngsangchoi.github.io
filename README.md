@@ -8,7 +8,7 @@ Source code for my personal academic website and portfolio.
 
 ## Development
 
-The project requires Node.js 22 and pnpm 9.
+The project requires Node.js 22 and pnpm 11.
 
 ```sh
 pnpm install
