@@ -9,13 +9,19 @@ interface Props {
 }
 
 const {
-	meta: { articleDate, description = siteConfig.description, ogImage, title },
+	meta: { articleDate, description = siteConfig.description, ogImage, robots, title },
 } = Astro.props;
 ---
 
 <html class="scroll-smooth" lang={siteConfig.lang}>
 	<head>
-		<BaseHead articleDate={articleDate} description={description} ogImage={ogImage} title={title} />
+		<BaseHead
+			articleDate={articleDate}
+			description={description}
+			ogImage={ogImage}
+			robots={robots}
+			title={title}
+		/>
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
@@ -28,7 +34,7 @@ const {
 	>
 		<SkipLink />
 
-		<main class="flex flex-grow flex-col">
+		<main id="main" class="flex flex-grow flex-col">
 			<div class="my-auto py-12 pb-[10vh] sm:py-24">
 				<slot />
 			</div>

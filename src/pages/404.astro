@@ -3,11 +3,18 @@ import PageLayout from "@/layouts/Base.astro";
 
 const meta = {
 	description: "Oops! It looks like this page is lost in space!",
+	robots: "noindex, noai, noimageai",
 	title: "Oops! You found a missing page!",
 };
 ---
 
 <PageLayout meta={meta}>
 	<h1 class="title mb-12">404 | Oops something went wrong</h1>
-	<p class="mb-8">Please use the navigation to find your way back</p>
+	<p class="mb-8">
+		The page could not be found. <a
+			href="/"
+			class="font-bold text-gray-100 underline underline-offset-4 hover:text-gray-400"
+			>Return home</a
+		>.
+	</p>
 </PageLayout>

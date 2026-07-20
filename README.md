@@ -1,4 +1,23 @@
-This is the source code for my personal academic website and portfolio. This site is built with the following:
+# Young Sang Choi
 
-- **Framework:** [Astro](https://astro.build/) (v5)
+Source code for my personal academic website and portfolio.
+
+- **Framework:** [Astro](https://astro.build/) 6
+- **Styling:** [Tailwind CSS](https://tailwindcss.com/) 4
 - **Theme Base:** [Astro Cactus](https://astro-cactus.chriswilliams.dev/)
+
+## Development
+
+The project requires Node.js 22 and pnpm 9.
+
+```sh
+pnpm install
+pnpm dev
+```
+
+Run validation and create a production build with:
+
+```sh
+pnpm check
+pnpm build
+```

@@ -1,5 +1,6 @@
 ---
 import PageLayout from "@/layouts/Base.astro";
+import { siteConfig } from "@/site.config";
 
 interface Publication {
 	title: string;
@@ -38,11 +39,11 @@ const publications: Publication[] = [
 ];
 ---
 
-<PageLayout meta={{ title: "Home" }}>
+<PageLayout meta={{ title: siteConfig.title }}>
 	<section class="max-w-2xl leading-relaxed text-gray-400">
 		<div class="mb-6 space-y-6">
 			<p>
-				Young Sang "Young" Choi is a doctoral student advised by <a
+				Young Sang “Young” Choi is a doctoral student at Columbia University advised by <a
 					href="https://reaim-lab.github.io/shalmalijoshi.html"
 					class="font-bold text-gray-100 underline decoration-solid underline-offset-4"
 					target="_blank"
@@ -52,12 +53,17 @@ const publications: Publication[] = [
 					class="font-bold text-gray-100 underline decoration-solid underline-offset-4"
 					target="_blank"
 					rel="noopener noreferrer">Dr. Pierre Elias</a
-				> at Columbia University and a research intern on the <a
+				> and a member of the <a
+					href="https://cail.columbia.edu"
+					class="font-bold text-gray-100 underline decoration-solid underline-offset-4"
+					target="_blank"
+					rel="noopener noreferrer">Columbia Core AI Lab (CAIL)</a
+				>. He is also a research intern on the <a
 					href="https://sra.samsung.com/research-area/digital-health/"
 					class="font-bold text-gray-100 underline decoration-solid underline-offset-4"
 					target="_blank"
-					rel="noopener noreferrer">Digital Health Algorithms</a
-				> team at Samsung Research America (SRA).
+					rel="noopener noreferrer">Digital Health Team</a
+				> at Samsung Research America (SRA).
 			</p>
 
 			<p>
@@ -74,19 +80,32 @@ const publications: Publication[] = [
 		</div>
 
 		<div class="mb-12 flex flex-col gap-0">
-			<div
-				id="email-toggle"
-				class="group flex w-fit cursor-pointer items-center gap-2 text-gray-100 transition-colors select-none hover:text-gray-400"
-			>
-				<span>Email</span>
+			<div class="flex w-fit items-center gap-2">
+				<button
+					id="email-toggle"
+					type="button"
+					class="group flex cursor-pointer items-center gap-2 text-gray-100 transition-colors select-none hover:text-gray-400"
+					aria-controls="email-container"
+					aria-expanded="false"
+				>
+					<span>Email</span>
+					<span
+						id="email-arrow"
+						aria-hidden="true"
+						class="inline-block transition-transform duration-300">→</span
+					>
+				</button>
 				<div
 					id="email-container"
+					aria-hidden="true"
+					inert
 					class="flex max-w-0 items-center gap-4 overflow-hidden opacity-0 transition-all duration-500 ease-in-out"
 				>
 					<span
 						id="email-display"
 						class="font-mono text-xs whitespace-nowrap text-gray-400"></span>
 					<button
+						type="button"
 						class="copy-email rounded bg-white/10 px-2 py-1 text-[10px] font-bold text-gray-100 transition-colors hover:bg-white/20"
 						data-u="young.sang.choi"
 						data-d="columbia"
@@ -95,7 +114,6 @@ const publications: Publication[] = [
 						Copy
 					</button>
 				</div>
-				<span id="email-arrow" class="inline-block transition-transform duration-300">→</span>
 			</div>
 
 			<a
@@ -157,7 +175,10 @@ const publications: Publication[] = [
 									))}
 									{paper.bibtex && (
 										<button
-											class="toggle-bibtex flex cursor-pointer items-center gap-1 transition-colors outline-none select-none hover:text-gray-400"
+											type="button"
+											class="toggle-bibtex flex cursor-pointer items-center gap-1 transition-colors select-none hover:text-gray-400"
+											aria-controls={`bibtex-${index}`}
+											aria-expanded="false"
 											data-target={`bibtex-${index}`}
 										>
 											BibTeX{" "}
@@ -171,10 +192,13 @@ const publications: Publication[] = [
 								{paper.bibtex && (
 									<div
 										id={`bibtex-${index}`}
+										aria-hidden="true"
+										inert
 										class="relative mt-4 max-h-0 w-full overflow-hidden bg-white/5 opacity-0 transition-all duration-500 ease-in-out"
 									>
 										<div class="p-4">
 											<button
+												type="button"
 												class="copy-bibtex absolute top-4 right-4 rounded bg-white/10 px-2 py-1 text-[10px] font-bold text-gray-100 transition-colors hover:bg-white/20"
 												data-bibtex={paper.bibtex}
 											>
@@ -243,10 +267,16 @@ const publications: Publication[] = [
 				if (isClosed) {
 					container?.classList.replace("max-w-0", "max-w-md");
 					container?.classList.replace("opacity-0", "opacity-100");
+					container?.setAttribute("aria-hidden", "false");
+					if (container) container.inert = false;
+					toggle.setAttribute("aria-expanded", "true");
 					if (arrow) arrow.style.transform = "rotate(180deg)";
 				} else {
 					container?.classList.replace("max-w-md", "max-w-0");
 					container?.classList.replace("opacity-100", "opacity-0");
+					container?.setAttribute("aria-hidden", "true");
+					if (container) container.inert = true;
+					toggle.setAttribute("aria-expanded", "false");
 					if (arrow) arrow.style.transform = "rotate(0deg)";
 				}
 			});
@@ -286,10 +316,16 @@ const publications: Publication[] = [
 							if (isClosed) {
 								targetEl.classList.replace("max-h-0", "max-h-[500px]");
 								targetEl.classList.replace("opacity-0", "opacity-100");
+								targetEl.setAttribute("aria-hidden", "false");
+								targetEl.inert = false;
+								buttonElement.setAttribute("aria-expanded", "true");
 								if (bibtexArrow) bibtexArrow.style.transform = "rotate(90deg)";
 							} else {
 								targetEl.classList.replace("max-h-[500px]", "max-h-0");
 								targetEl.classList.replace("opacity-100", "opacity-0");
+								targetEl.setAttribute("aria-hidden", "true");
+								targetEl.inert = true;
+								buttonElement.setAttribute("aria-expanded", "false");
 								if (bibtexArrow) bibtexArrow.style.transform = "rotate(0deg)";
 							}
 						}

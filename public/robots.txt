@@ -20,10 +20,4 @@ Disallow: /
 
 User-agent: *
 Disallow: /*.pdf$
-Disallow: /*.jpg$
-Disallow: /*.png$
-Disallow: /*.jpeg$
-Disallow: /*.gif$
-Disallow: /_astro/
-
 Allow: /
