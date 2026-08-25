@@ -199,14 +199,44 @@ const publications: Publication[] = [
 										<div class="p-4">
 											<button
 												type="button"
-												class="copy-bibtex absolute top-4 right-4 rounded bg-white/10 px-2 py-1 text-[10px] font-bold text-gray-100 transition-colors hover:bg-white/20"
+												class="copy-bibtex absolute top-3 right-3 flex size-5 cursor-pointer items-center justify-center rounded bg-white/10 text-gray-100 transition-colors hover:bg-white/20"
 												data-bibtex={paper.bibtex}
+												aria-label="Copy BibTeX"
+												title="Copy BibTeX"
 											>
-												Copy
+												<svg
+													class="copy-icon size-3"
+													viewBox="0 0 16 16"
+													fill="none"
+													stroke="currentColor"
+													stroke-width="1.25"
+													stroke-linecap="round"
+													stroke-linejoin="round"
+													aria-hidden="true"
+												>
+													<path
+														d="M5.5 5.5V4A1.5 1.5 0 0 1 7 2.5h5A1.5 1.5 0 0 1 13.5 4v5a1.5 1.5 0 0 1-1.5 1.5h-1.5"
+													/>
+													<rect x="2.5" y="5.5" width="8" height="8" rx="1.5" />
+												</svg>
+												<svg
+													class="copied-icon hidden size-3"
+													viewBox="0 0 16 16"
+													fill="none"
+													stroke="currentColor"
+													stroke-width="1.5"
+													stroke-linecap="round"
+													stroke-linejoin="round"
+													aria-hidden="true"
+												>
+													<path d="m3 8.25 3.25 3.25L13 4.75" />
+												</svg>
+												<span class="copy-label sr-only" aria-live="polite">Copy BibTeX</span>
 											</button>
-											<pre class="text-left font-mono text-[10px] leading-relaxed whitespace-pre-wrap text-gray-300 sm:text-xs">
-												<code set:text={paper.bibtex} />
-											</pre>
+											<pre
+												class="pr-6 text-left font-mono text-[10px] leading-relaxed whitespace-pre-wrap text-gray-300 sm:text-xs"
+												set:text={paper.bibtex}
+											/>
 										</div>
 									</div>
 								)}
@@ -343,10 +373,20 @@ const publications: Publication[] = [
 					const bibtex = copyElement.getAttribute("data-bibtex");
 					if (bibtex) {
 						navigator.clipboard.writeText(bibtex).then(() => {
-							const originalText = copyElement.textContent;
-							copyElement.textContent = "Copied!";
+							const copyIcon = copyElement.querySelector(".copy-icon");
+							const copiedIcon = copyElement.querySelector(".copied-icon");
+							const copyLabel = copyElement.querySelector(".copy-label");
+							copyIcon?.classList.add("hidden");
+							copiedIcon?.classList.remove("hidden");
+							if (copyLabel) copyLabel.textContent = "Copied";
+							copyElement.setAttribute("aria-label", "Copied");
+							copyElement.setAttribute("title", "Copied");
 							setTimeout(() => {
-								copyElement.textContent = originalText;
+								copyIcon?.classList.remove("hidden");
+								copiedIcon?.classList.add("hidden");
+								if (copyLabel) copyLabel.textContent = "Copy BibTeX";
+								copyElement.setAttribute("aria-label", "Copy BibTeX");
+								copyElement.setAttribute("title", "Copy BibTeX");
 							}, 2000);
 						});
 					}
