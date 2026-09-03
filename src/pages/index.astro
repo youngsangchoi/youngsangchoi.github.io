@@ -58,7 +58,7 @@ const publications: Publication[] = [
 					class="font-bold text-gray-100 underline decoration-solid underline-offset-4"
 					target="_blank"
 					rel="noopener noreferrer">Columbia Core AI Lab (CAIL)</a
-				>. He previously served as a research intern on the <a
+				>. He was previously a research intern on the <a
 					href="https://sra.samsung.com/research-area/digital-health/"
 					class="font-bold text-gray-100 underline decoration-solid underline-offset-4"
 					target="_blank"
@@ -106,12 +106,41 @@ const publications: Publication[] = [
 						class="font-mono text-xs whitespace-nowrap text-gray-400"></span>
 					<button
 						type="button"
-						class="copy-email rounded bg-white/10 px-2 py-1 text-[10px] font-bold text-gray-100 transition-colors hover:bg-white/20"
+						class="copy-email flex size-5 cursor-pointer items-center justify-center rounded bg-white/10 text-gray-100 transition-colors hover:bg-white/20"
 						data-u="young.sang.choi"
 						data-d="columbia"
 						data-t="edu"
+						aria-label="Copy email"
+						title="Copy email"
 					>
-						Copy
+						<svg
+							class="copy-icon size-3"
+							viewBox="0 0 16 16"
+							fill="none"
+							stroke="currentColor"
+							stroke-width="1.25"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							aria-hidden="true"
+						>
+							<path
+								d="M5.5 5.5V4A1.5 1.5 0 0 1 7 2.5h5A1.5 1.5 0 0 1 13.5 4v5a1.5 1.5 0 0 1-1.5 1.5h-1.5"
+							/>
+							<rect x="2.5" y="5.5" width="8" height="8" rx="1.5" />
+						</svg>
+						<svg
+							class="copied-icon hidden size-3"
+							viewBox="0 0 16 16"
+							fill="none"
+							stroke="currentColor"
+							stroke-width="1.5"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							aria-hidden="true"
+						>
+							<path d="m3 8.25 3.25 3.25L13 4.75" />
+						</svg>
+						<span class="copy-label sr-only" aria-live="polite">Copy email</span>
 					</button>
 				</div>
 			</div>
@@ -323,10 +352,20 @@ const publications: Publication[] = [
 				const email = `${u}@${d}.${t}`;
 				if (email) {
 					navigator.clipboard.writeText(email).then(() => {
-						const originalText = copyBtn.textContent;
-						copyBtn.textContent = "Copied!";
+						const copyIcon = copyBtn.querySelector(".copy-icon");
+						const copiedIcon = copyBtn.querySelector(".copied-icon");
+						const copyLabel = copyBtn.querySelector(".copy-label");
+						copyIcon?.classList.add("hidden");
+						copiedIcon?.classList.remove("hidden");
+						if (copyLabel) copyLabel.textContent = "Copied";
+						copyBtn.setAttribute("aria-label", "Copied");
+						copyBtn.setAttribute("title", "Copied");
 						setTimeout(() => {
-							copyBtn.textContent = originalText;
+							copyIcon?.classList.remove("hidden");
+							copiedIcon?.classList.add("hidden");
+							if (copyLabel) copyLabel.textContent = "Copy email";
+							copyBtn.setAttribute("aria-label", "Copy email");
+							copyBtn.setAttribute("title", "Copy email");
 						}, 2000);
 					});
 				}
