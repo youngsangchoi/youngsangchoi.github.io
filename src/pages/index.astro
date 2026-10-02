@@ -41,265 +41,271 @@ const publications: Publication[] = [
 
 <PageLayout meta={{ title: siteConfig.title }}>
 	<section class="max-w-2xl leading-relaxed text-gray-400">
-		<div class="mb-6 space-y-6">
-			<p>
-				Young Sang “Young” Choi is a doctoral student at Columbia University, advised by <a
-					href="https://reaim-lab.github.io/shalmalijoshi.html"
-					class="font-bold text-gray-100 underline decoration-solid underline-offset-4"
-					target="_blank"
-					rel="noopener noreferrer">Dr. Shalmali Joshi</a
-				> and <a
-					href="https://pierreelias.github.io/Elias_Bio.html"
-					class="font-bold text-gray-100 underline decoration-solid underline-offset-4"
-					target="_blank"
-					rel="noopener noreferrer">Dr. Pierre Elias</a
-				>, and a member of the <a
-					href="https://cail.columbia.edu"
-					class="font-bold text-gray-100 underline decoration-solid underline-offset-4"
-					target="_blank"
-					rel="noopener noreferrer">Columbia Core AI Lab (CAIL)</a
-				>. He was previously a research intern on the <a
-					href="https://sra.samsung.com/research-area/digital-health/"
-					class="font-bold text-gray-100 underline decoration-solid underline-offset-4"
-					target="_blank"
-					rel="noopener noreferrer">Digital Health Team</a
-				> at Samsung Research America (SRA).
-			</p>
+		<div class="flex min-h-svh items-center py-12 sm:py-24">
+			<div class="w-full">
+				<div class="mb-6 space-y-6">
+					<p>
+						Young Sang “Young” Choi is a doctoral student at Columbia University, advised by <a
+							href="https://reaim-lab.github.io/shalmalijoshi.html"
+							class="font-bold text-gray-100 underline decoration-solid underline-offset-4"
+							target="_blank"
+							rel="noopener noreferrer">Dr. Shalmali Joshi</a
+						> and <a
+							href="https://pierreelias.github.io/Elias_Bio.html"
+							class="font-bold text-gray-100 underline decoration-solid underline-offset-4"
+							target="_blank"
+							rel="noopener noreferrer">Dr. Pierre Elias</a
+						>, and a member of the <a
+							href="https://cail.columbia.edu"
+							class="font-bold text-gray-100 underline decoration-solid underline-offset-4"
+							target="_blank"
+							rel="noopener noreferrer">Columbia Core AI Lab (CAIL)</a
+						>. He was previously a research intern on the <a
+							href="https://sra.samsung.com/research-area/digital-health/"
+							class="font-bold text-gray-100 underline decoration-solid underline-offset-4"
+							target="_blank"
+							rel="noopener noreferrer">Digital Health Team</a
+						> at Samsung Research America (SRA).
+					</p>
 
-			<p>
-				His research sits on the intersection of <strong
-					class="font-bold text-gray-100">multimodal learning</strong
-				>, <strong class="font-bold text-gray-100">event stream modeling</strong
-				>, and <strong class="font-bold text-gray-100"
-					>trustworthy machine learning</strong
-				>. He is particularly interested in how these fields converge to create reliable AI-based
-				systems that <strong class="font-bold text-gray-100"
-					>advance human health</strong
-				>.
-			</p>
-		</div>
+					<p>
+						His research sits on the intersection of <strong class="font-bold text-gray-100"
+							>multimodal learning</strong
+						>, <strong class="font-bold text-gray-100">event stream modeling</strong>, and <strong
+							class="font-bold text-gray-100">trustworthy machine learning</strong
+						>. He is particularly interested in how these fields converge to create reliable
+						AI-based systems that <strong class="font-bold text-gray-100"
+							>advance human health</strong
+						>.
+					</p>
+				</div>
 
-		<div class="mb-12 flex flex-col gap-0">
-			<div class="flex w-fit items-center gap-2">
-				<button
-					id="email-toggle"
-					type="button"
-					class="group flex cursor-pointer items-center gap-2 text-gray-100 transition-colors select-none hover:text-gray-400"
-					aria-controls="email-container"
-					aria-expanded="false"
-				>
-					<span>Email</span>
-					<span
-						id="email-arrow"
-						aria-hidden="true"
-						class="inline-block transition-transform duration-300">→</span
-					>
-				</button>
-				<div
-					id="email-container"
-					aria-hidden="true"
-					inert
-					class="flex max-w-0 items-center gap-4 overflow-hidden opacity-0 transition-all duration-500 ease-in-out"
-				>
-					<span
-						id="email-display"
-						class="font-mono text-xs whitespace-nowrap text-gray-400"></span>
-					<button
-						type="button"
-						class="copy-email flex size-5 cursor-pointer items-center justify-center rounded bg-white/10 text-gray-100 transition-colors hover:bg-white/20"
-						data-u="young.sang.choi"
-						data-d="columbia"
-						data-t="edu"
-						aria-label="Copy email"
-						title="Copy email"
-					>
-						<svg
-							class="copy-icon size-3"
-							viewBox="0 0 16 16"
-							fill="none"
-							stroke="currentColor"
-							stroke-width="1.25"
-							stroke-linecap="round"
-							stroke-linejoin="round"
-							aria-hidden="true"
+				<div class="flex flex-col gap-0">
+					<div class="flex w-fit items-center gap-2">
+						<button
+							id="email-toggle"
+							type="button"
+							class="group flex cursor-pointer items-center gap-2 text-gray-100 transition-colors select-none hover:text-gray-400"
+							aria-controls="email-container"
+							aria-expanded="false"
 						>
-							<path
-								d="M5.5 5.5V4A1.5 1.5 0 0 1 7 2.5h5A1.5 1.5 0 0 1 13.5 4v5a1.5 1.5 0 0 1-1.5 1.5h-1.5"
-							/>
-							<rect x="2.5" y="5.5" width="8" height="8" rx="1.5" />
-						</svg>
-						<svg
-							class="copied-icon hidden size-3"
-							viewBox="0 0 16 16"
-							fill="none"
-							stroke="currentColor"
-							stroke-width="1.5"
-							stroke-linecap="round"
-							stroke-linejoin="round"
+							<span>Email</span>
+							<span
+								id="email-arrow"
+								aria-hidden="true"
+								class="inline-block transition-transform duration-300">→</span
+							>
+						</button>
+						<div
+							id="email-container"
 							aria-hidden="true"
+							inert
+							class="flex max-w-0 items-center gap-4 overflow-hidden opacity-0 transition-all duration-500 ease-in-out"
 						>
-							<path d="m3 8.25 3.25 3.25L13 4.75" />
-						</svg>
-						<span class="copy-label sr-only" aria-live="polite">Copy email</span>
-					</button>
+							<span id="email-display" class="font-mono text-xs whitespace-nowrap text-gray-400"
+							></span>
+							<button
+								type="button"
+								class="copy-email flex size-5 cursor-pointer items-center justify-center rounded bg-white/10 text-gray-100 transition-colors hover:bg-white/20"
+								data-u="young.sang.choi"
+								data-d="columbia"
+								data-t="edu"
+								aria-label="Copy email"
+								title="Copy email"
+							>
+								<svg
+									class="copy-icon size-3"
+									viewBox="0 0 16 16"
+									fill="none"
+									stroke="currentColor"
+									stroke-width="1.25"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									aria-hidden="true"
+								>
+									<path
+										d="M5.5 5.5V4A1.5 1.5 0 0 1 7 2.5h5A1.5 1.5 0 0 1 13.5 4v5a1.5 1.5 0 0 1-1.5 1.5h-1.5"
+									></path>
+									<rect x="2.5" y="5.5" width="8" height="8" rx="1.5"></rect>
+								</svg>
+								<svg
+									class="copied-icon hidden size-3"
+									viewBox="0 0 16 16"
+									fill="none"
+									stroke="currentColor"
+									stroke-width="1.5"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									aria-hidden="true"
+								>
+									<path d="m3 8.25 3.25 3.25L13 4.75"></path>
+								</svg>
+								<span class="copy-label sr-only" aria-live="polite">Copy email</span>
+							</button>
+						</div>
+					</div>
+
+					<a
+						href="/young_sang_choi_cv.pdf"
+						class="group flex w-fit items-center gap-2 text-gray-100 transition-colors hover:text-gray-400"
+						target="_blank"
+					>
+						<span>Current CV →</span>
+					</a>
+					<a
+						href="https://scholar.google.com/citations?hl=en&user=cX-zhzAAAAAJ"
+						class="group flex w-fit items-center gap-2 text-gray-100 transition-colors hover:text-gray-400"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						<span>Google Scholar →</span>
+					</a>
+					<a
+						href="https://github.com/youngsangchoi"
+						class="group flex w-fit items-center gap-2 text-gray-100 transition-colors hover:text-gray-400"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						<span>GitHub →</span>
+					</a>
+					<a
+						href="https://www.linkedin.com/in/youngsangchoi/"
+						class="group flex w-fit items-center gap-2 text-gray-100 transition-colors hover:text-gray-400"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						<span>LinkedIn →</span>
+					</a>
 				</div>
 			</div>
-
-			<a
-				href="/young_sang_choi_cv.pdf"
-				class="group flex w-fit items-center gap-2 text-gray-100 transition-colors hover:text-gray-400"
-				target="_blank"
-			>
-				<span>Current CV →</span>
-			</a>
-			<a
-				href="https://scholar.google.com/citations?hl=en&user=cX-zhzAAAAAJ"
-				class="group flex w-fit items-center gap-2 text-gray-100 transition-colors hover:text-gray-400"
-				target="_blank"
-				rel="noopener noreferrer"
-			>
-				<span>Google Scholar →</span>
-			</a>
-			<a
-				href="https://github.com/youngsangchoi"
-				class="group flex w-fit items-center gap-2 text-gray-100 transition-colors hover:text-gray-400"
-				target="_blank"
-				rel="noopener noreferrer"
-			>
-				<span>GitHub →</span>
-			</a>
-			<a
-				href="https://www.linkedin.com/in/youngsangchoi/"
-				class="group flex w-fit items-center gap-2 text-gray-100 transition-colors hover:text-gray-400"
-				target="_blank"
-				rel="noopener noreferrer"
-			>
-				<span>LinkedIn →</span>
-			</a>
 		</div>
 
-		<div class="mb-12">
-			<h2 class="mb-6 text-sm font-bold tracking-widest text-gray-400 uppercase">Selected Works</h2>
-			<ul class="flex flex-col gap-8">
-				{
-					publications.map((paper, index) => (
-						<li class="flex flex-col gap-2 text-base">
-							<h3 class="font-bold text-gray-100" set:html={paper.title} />
-							<div class="leading-relaxed text-gray-400">
-								<span set:html={paper.authors} />
-							</div>
-							<div class="text-gray-400">{paper.venue}</div>
-
-							<div>
-								<div class="mt-2 flex flex-wrap gap-4 text-sm font-bold text-gray-100">
-									{paper.links.map((link) => (
-										<a
-											href={link.href}
-											class="transition-colors hover:text-gray-400"
-											target="_blank"
-											rel="noopener noreferrer"
-										>
-											{link.text}
-										</a>
-									))}
-									{paper.bibtex && (
-										<button
-											type="button"
-											class="toggle-bibtex flex cursor-pointer items-center gap-1 transition-colors select-none hover:text-gray-400"
-											aria-controls={`bibtex-${index}`}
-											aria-expanded="false"
-											data-target={`bibtex-${index}`}
-										>
-											BibTeX{" "}
-											<span class="bibtex-arrow inline-block transition-transform duration-300">
-												→
-											</span>
-										</button>
-									)}
+		<div class="pb-[10vh]">
+			<div class="mb-12">
+				<h2 class="mb-6 text-sm font-bold tracking-widest text-gray-400 uppercase">
+					Selected Works
+				</h2>
+				<ul class="flex flex-col gap-8">
+					{
+						publications.map((paper, index) => (
+							<li class="flex flex-col gap-2 text-base">
+								<h3 class="font-bold text-gray-100" set:html={paper.title} />
+								<div class="leading-relaxed text-gray-400">
+									<span set:html={paper.authors} />
 								</div>
+								<div class="text-gray-400">{paper.venue}</div>
 
-								{paper.bibtex && (
-									<div
-										id={`bibtex-${index}`}
-										aria-hidden="true"
-										inert
-										class="relative mt-4 max-h-0 w-full overflow-hidden bg-white/5 opacity-0 transition-all duration-500 ease-in-out"
-									>
-										<div class="p-4">
+								<div>
+									<div class="mt-2 flex flex-wrap gap-4 text-sm font-bold text-gray-100">
+										{paper.links.map((link) => (
+											<a
+												href={link.href}
+												class="transition-colors hover:text-gray-400"
+												target="_blank"
+												rel="noopener noreferrer"
+											>
+												{link.text}
+											</a>
+										))}
+										{paper.bibtex && (
 											<button
 												type="button"
-												class="copy-bibtex absolute top-3 right-3 flex size-5 cursor-pointer items-center justify-center rounded bg-white/10 text-gray-100 transition-colors hover:bg-white/20"
-												data-bibtex={paper.bibtex}
-												aria-label="Copy BibTeX"
-												title="Copy BibTeX"
+												class="toggle-bibtex flex cursor-pointer items-center gap-1 transition-colors select-none hover:text-gray-400"
+												aria-controls={`bibtex-${index}`}
+												aria-expanded="false"
+												data-target={`bibtex-${index}`}
 											>
-												<svg
-													class="copy-icon size-3"
-													viewBox="0 0 16 16"
-													fill="none"
-													stroke="currentColor"
-													stroke-width="1.25"
-													stroke-linecap="round"
-													stroke-linejoin="round"
-													aria-hidden="true"
-												>
-													<path
-														d="M5.5 5.5V4A1.5 1.5 0 0 1 7 2.5h5A1.5 1.5 0 0 1 13.5 4v5a1.5 1.5 0 0 1-1.5 1.5h-1.5"
-													/>
-													<rect x="2.5" y="5.5" width="8" height="8" rx="1.5" />
-												</svg>
-												<svg
-													class="copied-icon hidden size-3"
-													viewBox="0 0 16 16"
-													fill="none"
-													stroke="currentColor"
-													stroke-width="1.5"
-													stroke-linecap="round"
-													stroke-linejoin="round"
-													aria-hidden="true"
-												>
-													<path d="m3 8.25 3.25 3.25L13 4.75" />
-												</svg>
-												<span class="copy-label sr-only" aria-live="polite">Copy BibTeX</span>
+												BibTeX{" "}
+												<span class="bibtex-arrow inline-block transition-transform duration-300">
+													→
+												</span>
 											</button>
-											<pre
-												class="pr-6 text-left font-mono text-[10px] leading-relaxed whitespace-pre-wrap text-gray-300 sm:text-xs"
-												set:text={paper.bibtex}
-											/>
-										</div>
+										)}
 									</div>
-								)}
-							</div>
-						</li>
-					))
-				}
-			</ul>
-		</div>
 
-		<div class="mb-8">
-			<h2 class="mb-6 text-sm font-bold tracking-widest text-gray-400 uppercase">
-				Professional Service
-			</h2>
-			<div class="space-y-6 text-base text-gray-400">
-				<div class="flex flex-col gap-1">
-					<p class="font-bold text-gray-100">Journal Reviewer:</p>
-					<p>Transactions on Machine Learning Research (TMLR)</p>
+									{paper.bibtex && (
+										<div
+											id={`bibtex-${index}`}
+											aria-hidden="true"
+											inert
+											class="relative mt-4 max-h-0 w-full overflow-hidden bg-white/5 opacity-0 transition-all duration-500 ease-in-out"
+										>
+											<div class="p-4">
+												<button
+													type="button"
+													class="copy-bibtex absolute top-3 right-3 flex size-5 cursor-pointer items-center justify-center rounded bg-white/10 text-gray-100 transition-colors hover:bg-white/20"
+													data-bibtex={paper.bibtex}
+													aria-label="Copy BibTeX"
+													title="Copy BibTeX"
+												>
+													<svg
+														class="copy-icon size-3"
+														viewBox="0 0 16 16"
+														fill="none"
+														stroke="currentColor"
+														stroke-width="1.25"
+														stroke-linecap="round"
+														stroke-linejoin="round"
+														aria-hidden="true"
+													>
+														<path d="M5.5 5.5V4A1.5 1.5 0 0 1 7 2.5h5A1.5 1.5 0 0 1 13.5 4v5a1.5 1.5 0 0 1-1.5 1.5h-1.5" />
+														<rect x="2.5" y="5.5" width="8" height="8" rx="1.5" />
+													</svg>
+													<svg
+														class="copied-icon hidden size-3"
+														viewBox="0 0 16 16"
+														fill="none"
+														stroke="currentColor"
+														stroke-width="1.5"
+														stroke-linecap="round"
+														stroke-linejoin="round"
+														aria-hidden="true"
+													>
+														<path d="m3 8.25 3.25 3.25L13 4.75" />
+													</svg>
+													<span class="copy-label sr-only" aria-live="polite">
+														Copy BibTeX
+													</span>
+												</button>
+												<pre
+													class="pr-6 text-left font-mono text-[10px] leading-relaxed whitespace-pre-wrap text-gray-300 sm:text-xs"
+													set:text={paper.bibtex}
+												/>
+											</div>
+										</div>
+									)}
+								</div>
+							</li>
+						))
+					}
+				</ul>
+			</div>
+
+			<div class="mb-8">
+				<h2 class="mb-6 text-sm font-bold tracking-widest text-gray-400 uppercase">
+					Professional Service
+				</h2>
+				<div class="space-y-6 text-base text-gray-400">
+					<div class="flex flex-col gap-1">
+						<p class="font-bold text-gray-100">Journal Reviewer:</p>
+						<p>Transactions on Machine Learning Research (TMLR)</p>
+					</div>
+					<div class="flex flex-col gap-1">
+						<p class="font-bold text-gray-100">Conference Reviewer:</p>
+						<ul class="flex flex-col gap-1">
+							<li>International Conference on Machine Learning (ICML): 2026<sup>&dagger;</sup></li>
+							<li>Conference on Neural Information Processing Systems (NeurIPS): 2026</li>
+							<li>Machine Learning for Healthcare (MLHC): 2024, 2025, 2026</li>
+							<li>
+								International Conference on Medical Image Computing and Computer-Assisted
+								Intervention (MICCAI): 2025
+							</li>
+							<li>Machine Learning for Health Symposium (ML4H): 2025</li>
+							<li>American Medical Informatics Association Annual Symposium (AMIA): 2025</li>
+						</ul>
+					</div>
+					<p class="text-sm italic">&dagger; ICML Gold Reviewer</p>
 				</div>
-				<div class="flex flex-col gap-1">
-					<p class="font-bold text-gray-100">Conference Reviewer:</p>
-					<ul class="flex flex-col gap-1">
-						<li>International Conference on Machine Learning (ICML): 2026<sup>&dagger;</sup></li>
-						<li>Conference on Neural Information Processing Systems (NeurIPS): 2026</li>
-						<li>Machine Learning for Healthcare (MLHC): 2024, 2025, 2026</li>
-						<li>
-							International Conference on Medical Image Computing and Computer-Assisted Intervention
-							(MICCAI): 2025
-						</li>
-						<li>Machine Learning for Health Symposium (ML4H): 2025</li>
-						<li>American Medical Informatics Association Annual Symposium (AMIA): 2025</li>
-					</ul>
-				</div>
-				<p class="text-sm italic">&dagger; ICML Gold Reviewer</p>
 			</div>
 		</div>
 	</section>
